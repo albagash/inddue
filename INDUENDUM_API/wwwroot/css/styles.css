@@ -1,0 +1,231 @@
+﻿/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F4F7F6; /* Ngjyrë e butë dhe e pastër për sfondin */
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #00695C; /* Ngjyrë e errët jeshile që është elegante dhe tërheqëse */
+    color: white;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); /* Hijë të butë për thellësi */
+}
+
+    header h1 {
+        font-size: 30px;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    header nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 25px;
+    }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+            header nav ul li a:hover {
+                color: #FFD700; /* Artë për efekt hover */
+            }
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+    .hero img {
+        width: 100%;
+        height: auto;
+        display: block;
+        opacity: 0.85;
+    }
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 193, 7, 0.8); /* Ngjyrë ari me transparencë */
+    color: white;
+    padding: 20px 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 80%;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Efekt hijë për luks */
+}
+
+    .hero-content h2 {
+        font-size: 48px;
+        margin: 10px 0;
+        font-weight: bold;
+        background: linear-gradient(45deg, #FFD700, #FF8C00); /* Degradim artë dhe portokalli */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Hijë për tekst */
+    }
+
+    .hero-content p {
+        font-size: 20px;
+        margin: 15px 0;
+        color: #F8F8FF; /* Ngjyrë shumë e lehtë për tekst */
+    }
+
+    .hero-content button {
+        background-color: #FF8C00; /* Ngjyrë portokalli luksoz */
+        color: white;
+        border: none;
+        padding: 15px 25px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Hijë elegante për buton */
+    }
+
+        .hero-content button:hover {
+            background-color: #FF6F00; /* Portokalli i errët për hover */
+            color: #F4F7F6;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4); /* Efekt hijë për buton */
+        }
+
+/* Categories */
+.category-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 40px 0;
+    padding: 20px;
+}
+
+.category {
+    text-align: center;
+    max-width: 240px;
+    flex: 1 1 calc(25% - 30px);
+    padding: 20px;
+    border: 3px solid #00695C; /* Kufij të gjelbër të errët */
+    border-radius: 20px;
+    background: linear-gradient(145deg, #e8f5e9, #d6e8d9); /* Sfond i freskët dhe modern */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+    .category:hover {
+        transform: scale(1.08);
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+        background: linear-gradient(145deg, #c8e6c9, #b5d8b7); /* Ngjyrë më e thellë gjatë hover */
+    }
+
+    .category img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+        margin-bottom: 15px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .category:hover img {
+        transform: scale(1.15);
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+.category-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #00695C;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+/* Animations for images */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.category img {
+    animation: fadeIn 1s ease;
+}
+
+/* Tooltip */
+.category {
+    position: relative;
+}
+
+    .category::after {
+        content: attr(title);
+        position: absolute;
+        bottom: -35px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #00695C;
+        color: white;
+        padding: 6px 12px;
+        font-size: 14px;
+        border-radius: 8px;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .category:hover::after {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(-5px);
+    }
+
+/* Best Sellers */
+.best-sellers {
+    padding: 40px 20px;
+}
+
+.product-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product {
+    border: 1px solid #ddd;
+    padding: 10px;
+    flex: 1 1 calc(33% - 20px);
+    max-width: 250px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
