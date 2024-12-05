@@ -1,1 +1,2 @@
-# INDUENDUM_API# inddue
+INDUENDUM është një platformë inovative për reklamimin dhe menaxhimin e koleksioneve të veshjeve nga kompani dhe konsumatorë. 
+Ky projekt ofron veçori të personalizuara për të shfaqur dhe promovuar produktet në mënyrë unike.
