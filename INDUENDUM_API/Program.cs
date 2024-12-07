@@ -148,11 +148,15 @@ app.UseCors("AllowAll"); // Aktivizo CORS
 app.UseHttpsRedirection(); // Aktivizo HTTPS
 app.UseStaticFiles(); // Aktivizo shërbimin e skedarëve statikë
 app.UseDefaultFiles(); // Shfaq automatikisht index.html
+
 app.UseAuthentication(); // Aktivizo JWT Authentication
 app.UseRouting();
 app.UseAuthorization(); // Aktivizo autorizimin
 
 app.MapControllers(); // Mapo kontrollet
+
+app.MapFallbackToFile("index.html");
+
 
 
 

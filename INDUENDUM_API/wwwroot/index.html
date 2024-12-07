@@ -3,72 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INDUENDUM - Luxury Without Labels</title>
+    <title>INDUENDUM - Sleek Vogue</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <header>
+    <header class="navbar">
         <div class="container">
-            <h1>INDUENDUM</h1>
+            <h1 class="logo">INDUENDUM</h1>
             <nav>
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">Collections</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <section class="hero">
-        <img src="/images/fashion-hero.jpg" alt="Fashion Hero" class="hero-image">
         <div class="hero-content">
-            <h2>Luxury Without Labels</h2>
-            <p>Explore new-in products and future bestsellers.</p>
-            <button>View Collection</button>
+            <h2>Explore more</h2>
+            <p>Create your Collection now</p>
+            <button>Shop Now</button>
         </div>
     </section>
 
-    <section class="categories">
-        <h2 class="section-title">Explore Our Exclusive Collections</h2>
-        <div class="category-container">
-            <!-- Kids -->
-            <div class="category" title="Discover Kids' Fashion">
-                <img src="/images/KID.jpg" alt="Kids" class="category-image">
-                <p class="category-title">Kids</p>
+    <section class="highlights">
+        <h2>This Week's Highlights</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="/images/denim.jpg" alt="Product 1">
+                <p>Round-neck knitted sweater</p>
+                <span>$39.90</span>
             </div>
-            <!-- Men -->
-            <div class="category" title="Explore Men's Style">
-                <img src="/images/MEN.jpg" alt="Men" class="category-image">
-                <p class="category-title">Men</p>
+            <div class="product-card">
+                <img src="/images/winn.jpg" alt="Product 2">
+                <p>Button knit cardigan</p>
+                <span>$39.90</span>
             </div>
-            <!-- Women -->
-            <div class="category" title="Discover Women's Elegance">
-                <img src="/images/WOMEN.jpg" alt="Women" class="category-image">
-                <p class="category-title">Women</p>
+            <div class="product-card">
+                <img src="/images/faux.jpg" alt="Product 3">
+                <p>Shearling denim jacket</p>
+                <span>$119.90</span>
             </div>
-            <!-- Accessories -->
-            <div class="category" title="Shop Accessories & More">
-                <img src="/images/Accessories.jpg" alt="Accessories" class="category-image">
-                <p class="category-title">Accessories</p>
+            <div class="product-card">
+                <img src="/images/green.jpg" alt="Product 4">
+                <p>Ultra-light quilted vest</p>
+                <span>$129.90</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seksioni për Dyqanet Partnere -->
+    <section class="partners">
+        <h2>Our Trusted Partners</h2>
+        <div class="partners-grid">
+            <div class="partner-logo">
+                <img src="/images/Prmall.png" alt="Partner 1">
+            </div>
+            <div class="partner-logo">
+                <img src="/images/albimall.png" alt="Partner 2">
+            </div>
+            <div class="partner-logo">
+                <img src="/images/albanica.png" alt="Partner 3">
+            </div>
+            <div class="partner-logo">
+                <img src="/images/lorik.png" alt="Partner 4">
+            </div>
+            <div class="partner-logo">
+                <img src="/images/hugo.jpeg" alt="Partner 5">
+            </div>
+        </div>
+    </section>
+    <section class="why-choose-us">
+        <h2>PSE TË NA ZGJIDHNI NE?</h2>
+        <div class="features-container">
+            <div class="feature-card">
+                <i class="fas fa-star"></i> <!-- Ikona për Materiale Cilësore -->
+                <h3>Materiale Cilësore</h3>
+                <p>Ne ofrojmë produkte të bëra nga materialet më cilësore, për t'ju ofruar komoditet maksimal.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-truck"></i> <!-- Ikona për Transport Falas -->
+                <h3>Transport Falas</h3>
+                <p>Transport falas për të gjitha porositë mbi 50€. Porosit tani dhe përfito!</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-undo-alt"></i> <!-- Ikona për Garanci Kthimi -->
+                <h3>Garanci Kthimi</h3>
+                <p>Ju ofrojmë kthim pa stres brenda 30 ditëve nëse nuk jeni të kënaqur.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-headset"></i> <!-- Ikona për Shërbim ndaj Klientit -->
+                <h3>Shërbim ndaj Klientit</h3>
+                <p>Ekipi ynë i dedikuar është këtu për t'ju ndihmuar 24/7.</p>
             </div>
         </div>
     </section>
 
 
-    <section class="best-sellers">
-        <h2>Best Sellers</h2>
-        <div class="product-container">
-            <div class="product">Nike Air Max 97 OG - $229.00</div>
-            <div class="product">Hampton Linen Shirt - $99.00</div>
-            <div class="product">Stonewashed Jacket - $529.00</div>
+    <section class="special-offers">
+        <h2>Ofertat Speciale</h2>
+        <div class="offers-container">
+            <div class="offer-item">
+                <img src="/images/Kostume.jpg" alt="Ofertë 1">
+                <h3>50% Ulje në Kostume</h3>
+                <p>Zgjidhni kostumin tuaj të preferuar me zbritje ekskluzive.</p>
+                <button>Shiko Ofertën</button>
+            </div>
+            <div class="offer-item">
+                <img src="/images/Blouse.jpg" alt="Ofertë 2">
+                <h3>Këmishë 1 + 1</h3>
+                <p>Blej 1 këmishe dhe merrni të dytën falas. Oferta zgjat deri në fund të muajit!</p>
+                <button>Shiko Ofertën</button>
+            </div>
+            <div class="offer-item">
+                <img src="/images/Premium.jpg" alt="Ofertë 3">
+                <h3>30% Ulje në Pallto</h3>
+                <p>Përballoni dimrin me stil dhe zbritje.</p>
+                <button>Shiko Ofertën</button>
+            </div>
+        </div>
+    </section>
+    <section class="faqs">
+        <h2>Pyetje të Shpeshta (FAQs)</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">Si mund të bëj një porosi?<span>+</span></button>
+                <div class="faq-answer">
+                    <p>Për të bërë një porosi, thjesht zgjidhni produktin tuaj të preferuar, shtypni 'Shto në Shportë' dhe ndiqni udhëzimet për pagesë.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">A ofroni kthime?<span>+</span></button>
+                <div class="faq-answer">
+                    <p>Po, ofrojmë kthime brenda 30 ditëve pas blerjes. Ju lutemi lexoni politikën tonë të kthimeve për më shumë detaje.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Si mund të kontaktoj me ju?<span>+</span></button>
+                <div class="faq-answer">
+                    <p>Mund të na kontaktoni nëpërmjet email-it tonë support@example.com ose duke telefonuar në numrin +383-44-123-456.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 INDUENDUM. All rights reserved.</p>
+        <div class="footer-container">
+            <p>&copy; 2024 Mixtas. All rights reserved.</p>
+        </div>
     </footer>
+    <script src="/js/script.js"></script>
 </body>
 </html>
-
