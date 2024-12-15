@@ -38,6 +38,7 @@ public class AuthController : ControllerBase
         var existingUser = await _userManager.FindByEmailAsync(model.Email);
         if (existingUser != null)
         {
+            Console.WriteLine($"❌ Përdoruesi me email {model.Email} ekziston tashmë.");
             return Conflict(new { message = "Përdoruesi me këtë email tashmë ekziston." });
         }
 
@@ -52,21 +53,32 @@ public class AuthController : ControllerBase
 
         if (!result.Succeeded)
         {
+            Console.WriteLine("❌ Gabim gjatë krijimit të përdoruesit.");
             return BadRequest(result.Errors);
         }
 
-        // Shto rolin nëse është specifikuar
+        // Kontrollo dhe shto rolin nëse mungon
         if (!string.IsNullOrEmpty(model.Role))
         {
             var roleExists = await _userManager.IsInRoleAsync(user, model.Role);
             if (!roleExists)
             {
-                await _userManager.AddToRoleAsync(user, model.Role);
+                var roleAdded = await _userManager.AddToRoleAsync(user, model.Role);
+                if (roleAdded.Succeeded)
+                {
+                    Console.WriteLine($"✅ Përdoruesi {model.Email} u shtua në rolin {model.Role}.");
+                }
+                else
+                {
+                    Console.WriteLine($"❌ Gabim gjatë shtimit të rolit {model.Role}.");
+                    return BadRequest(new { message = "Gabim gjatë shtimit të rolit." });
+                }
             }
         }
 
         return Ok(new { message = "Përdoruesi u regjistrua me sukses." });
     }
+
 
     // POST: /api/auth/login
     [HttpPost("login")]

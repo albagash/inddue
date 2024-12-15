@@ -6,69 +6,268 @@ body, h1, h2, p, ul, li {
     font-family: 'Arial', sans-serif;
 }
 
-/* Navbar */
+/* Navbar Styles */
 .navbar {
-    background-color: #000;
-    padding: 10px 20px;
-    color: white;
+    background: linear-gradient(90deg, #222, #444); /* Gradient elegant */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-    .navbar .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #f4d03f; /* E verdhë ari për luks */
+    text-transform: uppercase;
+    transition: transform 0.3s ease;
+}
+
+    .logo:hover {
+        transform: scale(1.1);
     }
 
-    .navbar ul {
-        display: flex;
-        gap: 15px;
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+    .nav-links a {
+        text-decoration: none;
+        color: #f5f5f5;
+        font-size: 1rem;
+        font-weight: bold;
+        padding: 8px 15px;
+        border-radius: 5px;
+        transition: all 0.3s;
     }
 
-        .navbar ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 8px 12px;
-            transition: background-color 0.3s;
+        .nav-links a:hover {
+            background-color: #555;
+            color: #f39c12; /* Ngjyrë e ngrohtë */
+            transform: translateY(-2px);
         }
 
-            .navbar ul li a:hover {
-                background-color: #444;
-                border-radius: 5px;
-            }
+.auth-links {
+    display: flex;
+    gap: 10px;
+}
+
+    .auth-links .btn {
+        padding: 8px 15px;
+        text-decoration: none;
+        color: white;
+        border: 2px solid #f39c12;
+        border-radius: 5px;
+        background-color: transparent;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+
+        .auth-links .btn:hover {
+            background-color: #f39c12;
+            color: black;
+            box-shadow: 0px 4px 8px rgba(243, 156, 18, 0.5);
+        }
+
+.mobile-nav-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #222;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+        .nav-links.active {
+            display: flex;
+        }
+
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    .auth-links {
+        display: none;
+    }
+}
+
 
 /* Hero Section */
 .hero {
-    background-color: #1a237e;
+    background-color: #283593;
     color: white;
     text-align: center;
-    padding: 50px 20px;
+    padding: 60px 20px;
+    border-radius: 8px;
 }
 
-    .hero h2 {
-        font-size: 36px;
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero-content button {
+    padding: 10px 20px;
+    background-color: #ff6f00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .hero-content button:hover {
+        background-color: #ff8f00;
+    }
+
+/* Seksioni i Produkteve */
+#products-section {
+    padding: 60px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+    #products-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin-top: 30px;
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 300px;
+}
+
+    .product-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-card img {
+        width: 100%;
+        border-radius: 8px;
         margin-bottom: 10px;
     }
 
-    .hero p {
-        font-size: 18px;
-        margin-bottom: 20px;
+    .product-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: #333;
     }
 
-    .hero button {
-        background-color: #ff6f00;
+    .product-card p {
+        font-size: 1rem;
+        color: #666;
+    }
+/* Modal General Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%;
+    text-align: center;
+}
+
+    .modal-content input, .modal-content button {
+        width: 80%;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+    }
+
+    .modal-content button {
+        background-color: #283593;
         color: white;
         border: none;
-        padding: 10px 20px;
-        font-size: 16px;
-        border-radius: 5px;
         cursor: pointer;
         transition: background-color 0.3s;
     }
 
-        .hero button:hover {
-            background-color: #ff9100;
+        .modal-content button:hover {
+            background-color: #5f5fc4;
         }
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    float: right;
+    cursor: pointer;
+}
+
+    .close:hover, .close:focus {
+        color: black;
+    }
+
+/* Navbar Buttons */
+.navbar ul li button {
+    background: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .navbar ul li button:hover {
+        background-color: #444;
+    }
+
+
 
 /* Highlights Section */
 .highlights {
@@ -82,10 +281,11 @@ body, h1, h2, p, ul, li {
     }
 
 .product-grid {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    flex-wrap: wrap;
+    justify-items: center;
+    margin-top: 30px;
 }
 
 .product-card {
@@ -95,9 +295,14 @@ body, h1, h2, p, ul, li {
     padding: 15px;
     text-align: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-    max-width: 200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 250px;
 }
+
+    .product-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    }
 
     .product-card img {
         width: 100%;
@@ -105,23 +310,23 @@ body, h1, h2, p, ul, li {
         margin-bottom: 10px;
     }
 
-    .product-card:hover {
-        transform: scale(1.05);
+    .product-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: #333;
     }
+
+    .product-card p {
+        font-size: 1rem;
+        color: #666;
+    }
+
 /* Partners Section */
 .partners {
     padding: 40px 20px;
     background-color: #f9f9f9;
     text-align: center;
 }
-/* Seksioni i ofertave speciale */
-.special-offers img {
-    width: 100%;
-    height: 250px; /* Lartësia fikse e fotove */
-    object-fit: cover; /* Shkurtim dhe përshtatje për të ruajtur proporcionet */
-    border-radius: 8px;
-}
-
 
     .partners h2 {
         margin-bottom: 20px;
@@ -131,7 +336,6 @@ body, h1, h2, p, ul, li {
 .partners-grid {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 30px;
     flex-wrap: wrap;
 }
@@ -144,102 +348,312 @@ body, h1, h2, p, ul, li {
     .partner-logo img:hover {
         transform: scale(1.1);
     }
+/* Seksioni: Pse të na Zgjidhni Ne */
 .why-choose-us {
+    padding: 60px 20px;
+    background-color: #ffe0b3;
     text-align: center;
-    padding: 50px 20px;
-    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
     .why-choose-us h2 {
-        font-size: 2.5em;
+        font-size: 2.5rem;
+        color: #d35400;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+
+.features-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 250px;
+    transition: transform 0.3s ease;
+}
+
+    .feature-card:hover {
+        transform: scale(1.05);
+    }
+
+    .feature-card i {
+        font-size: 2rem;
+        color: #d35400;
+        margin-bottom: 10px;
+    }
+
+    .feature-card h3 {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .feature-card p {
+        font-size: 1rem;
+        color: #666;
+        line-height: 1.6;
+    }
+
+
+
+/* Seksioni: Pyetje të Shpeshta (FAQs) */
+.faqs {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .faqs h2 {
+        font-size: 2.5rem;
         color: #333;
         margin-bottom: 30px;
         text-transform: uppercase;
     }
 
-.features-container {
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-question {
+    background-color: #43a047;
+    color: white;
+    font-size: 1.2rem;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: left;
+}
+
+    .faq-question:hover {
+        background-color: #66bb6a;
+    }
+
+.faq-answer {
+    background-color: #fff;
+    color: #555;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: none;
+    line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+/* Seksioni: Historitë e Klientëve */
+.client-stories {
+    padding: 60px 20px;
+    background-color: #fef9e7;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+    .client-stories h2 {
+        font-size: 2.5rem;
+        color: #d35400;
+        margin-bottom: 20px;
+    }
+
+.stories-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.story {
+    max-width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .story:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .story img {
+        width: 100%;
+        border-radius: 50%;
+        margin-bottom: 15px;
+    }
+
+    .story blockquote {
+        font-style: italic;
+        color: #555;
+        margin-bottom: 15px;
+    }
+
+    .story .client-name {
+        font-weight: bold;
+        color: #333;
+    }
+
+
+
+/* Seksioni: Zbuloni Stilin Tuaj */
+.discover-style {
+    padding: 60px 20px;
+    background-color: #e8f5e9;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+    .discover-style h2 {
+        font-size: 2.5rem;
+        color: #2e7d32;
+        margin-bottom: 20px;
+    }
+
+.style-categories {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
 }
 
-.feature-item {
-    background-color: white;
+.style-category {
+    background-color: #fff;
+    border: 1px solid #ddd;
     border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+    .style-category:hover {
+        transform: scale(1.05);
+    }
+
+    .style-category img {
+        max-width: 100%;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+
+    .style-category h3 {
+        font-size: 1.5rem;
+        color: #2e7d32;
+        margin-bottom: 15px;
+    }
+
+    .style-category button {
+        padding: 10px 20px;
+        background-color: #43a047;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .style-category button:hover {
+            background-color: #66bb6a;
+        }
+
+
+
+/* Seksioni: Klientët Tanë të Kënaqur */
+.happy-clients {
+    padding: 60px 20px;
+    background-color: #fff3e0; /* Ngjyrë e butë për sfondin */
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .happy-clients h2 {
+        font-size: 2.5rem;
+        color: #d35400;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+
+    .happy-clients p {
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 30px;
+    }
+
+.client-feedback-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.client-feedback {
     max-width: 300px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-    .feature-item:hover {
-        transform: translateY(-5px);
+    .client-feedback:hover {
+        transform: scale(1.05);
         box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
     }
 
-    .feature-item img {
+    .client-feedback img {
         width: 80px;
+        height: 80px;
+        border-radius: 50%; /* E bën foton rrethore */
         margin-bottom: 15px;
+        border: 3px solid #d35400;
     }
 
-    .feature-item h3 {
-        font-size: 1.5em;
-        margin-bottom: 10px;
-        color: #333;
-    }
-
-    .feature-item p {
-        font-size: 1em;
-        color: #666;
+    .client-feedback blockquote {
+        font-style: italic;
+        color: #555;
+        margin-bottom: 15px;
         line-height: 1.6;
     }
-/* Seksioni "Pse të na zgjidhni ne" */
-.why-choose-us {
-    padding: 50px 20px;
-    text-align: center;
-    background-color: #f9f9f9;
-}
 
-    .why-choose-us h2 {
-        font-size: 28px;
-        margin-bottom: 30px;
+    .client-feedback p {
+        font-size: 1rem;
+        color: #333;
         font-weight: bold;
     }
 
-.features-container {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    flex-wrap: wrap;
+.client-rating {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #f1c40f; /* Ngjyrë për yjet */
 }
 
-.feature-card {
-    background: white;
-    border-radius: 8px;
-    padding: 20px;
-    width: 250px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-    .feature-card i {
-        font-size: 36px;
-        color: #ff6f00;
-        margin-bottom: 15px;
-    }
-
-    .feature-card h3 {
-        font-size: 18px;
-        margin-bottom: 10px;
-        color: #333;
-    }
-
-    .feature-card p {
-        font-size: 14px;
-        color: #666;
-    }
 
 .special-offers {
     text-align: center;
@@ -267,7 +681,7 @@ body, h1, h2, p, ul, li {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
-    max-width: 300px;
+    width: 300px; /* Përcakton të njëjtën gjerësi */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -276,109 +690,102 @@ body, h1, h2, p, ul, li {
         box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
     }
 
-    .offer-item img {
+.offer-image {
+    width: 100%;
+    height: 250px; /* Vendos madhësi fikse */
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+    .offer-image img {
         width: 100%;
-        border-radius: 10px;
-        margin-bottom: 15px;
+        height: 100%;
+        object-fit: cover; /* Siguron që imazhi përshtatet në mënyrë të barabartë */
     }
 
-    .offer-item h3 {
-        font-size: 1.5em;
-        margin-bottom: 10px;
-        color: #d35400;
+.offer-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #d35400;
+}
+
+.offer-item p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+.offer-item button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #d35400;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .offer-item button:hover {
+        background-color: #e67e22;
     }
 
-    .offer-item p {
-        font-size: 1em;
-        color: #555;
-        line-height: 1.6;
-    }
-
-    .offer-item button {
-        margin-top: 15px;
-        padding: 10px 20px;
-        background-color: #d35400;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-        .offer-item button:hover {
-            background-color: #e67e22;
-        }
-.faqs {
-    padding: 50px 20px;
+/* Seksioni për Ofertat Speciale */
+/* Seksioni i Ofertave Speciale */
+.special-offers {
+    padding: 60px 20px;
     background-color: #f9f9f9;
     text-align: center;
 }
 
-    .faqs h2 {
-        font-size: 2.5em;
+    .special-offers h2 {
+        font-size: 2.5rem;
         margin-bottom: 30px;
-        color: #333;
-        text-transform: uppercase;
-    }
-
-.faq-container {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.faq-item {
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-}
-
-.faq-question {
-    width: 100%;
-    background-color: #fff;
-    border: none;
-    text-align: left;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #444;
-    cursor: pointer;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-    .faq-question span {
-        font-size: 1.5em;
-        color: #888;
-        transition: transform 0.3s ease;
-    }
-
-    .faq-question:hover {
         color: #d35400;
     }
 
-    .faq-question:focus {
-        outline: none;
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.product-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 300px;
+}
+
+    .product-card img {
+        width: 100%;
+        height: 250px; /* Madhësi fikse për uniformitet */
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 15px;
     }
 
-.faq-answer {
-    display: none;
-    padding: 10px 15px;
-    font-size: 1em;
-    color: #555;
-    background-color: #fff;
-    border-radius: 5px;
-}
+    .product-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #d35400;
+    }
 
-.faq-item.active .faq-answer {
-    display: block;
-}
+    .product-card p {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.6;
+    }
 
-.faq-item.active .faq-question span {
-    transform: rotate(45deg);
-    color: #d35400;
-}
+    .product-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    }
 
 /* Footer */
 footer {

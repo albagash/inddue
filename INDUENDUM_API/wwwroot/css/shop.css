@@ -1,0 +1,75 @@
+﻿/* Seksioni Hero për Ofertat Speciale */
+.offers-hero {
+    background: linear-gradient(135deg, #ff9800, #ffc107);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 10px;
+}
+
+    .offers-hero .hero-content h2 {
+        font-size: 2.8rem;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+
+    .offers-hero .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+/* Seksioni për Ofertat Speciale */
+.special-offers-grid {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+    .special-offers-grid h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        color: #d35400;
+    }
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.product-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 300px;
+}
+
+    .product-card img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .product-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #d35400;
+    }
+
+    .product-card p {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 10px;
+    }
+
+    .product-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    }

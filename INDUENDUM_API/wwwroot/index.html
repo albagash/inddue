@@ -4,31 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INDUENDUM - Sleek Vogue</title>
+    <script src="/js/scripts.js"></script>
     <link rel="stylesheet" href="/css/styles.css">
+
+
+
 </head>
 <body>
+    <!-- Navbar -->
     <header class="navbar">
         <div class="container">
-            <h1 class="logo">INDUENDUM</h1>
+            <a href="/index.html" class="logo">
+                <span class="logo-highlight">INDUENDUM</span>
+            </a>
             <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                <ul class="nav-links">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/portfolio.html">Portfolio</a></li>
+                    <li><a href="/products.html">Products</a></li>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/contact.html">Contact Us</a></li>
                 </ul>
             </nav>
+            <div class="auth-links">
+                <a href="/login.html" class="btn login-btn">Kyçu</a>
+                <a href="/register.html" class="btn register-btn">Regjistrohu</a>
+            </div>
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation">☰</button>
         </div>
     </header>
 
+
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h2>Explore more</h2>
             <p>Create your Collection now</p>
-            <button>Shop Now</button>
+            <button onclick="location.href='/products.html'" class="explore-products">Shiko Produktet</button>
         </div>
     </section>
+
+    <!-- Seksion për Admin -->
+    <div class="admin-section" style="display: none;">
+        <h2>Paneli i Administratorit</h2>
+        <p>Funksione të veçanta për administratorin.</p>
+        <button>Menaxho Përdoruesit</button>
+        <button>Menaxho Produktet</button>
+    </div>
+
+    <!-- Seksion për Kompaninë -->
+    <div class="company-section" style="display: none;">
+        <h2>Paneli i Kompanisë</h2>
+        <p>Funksione të veçanta për kompaninë.</p>
+        <button>Shiko Produktet e Publikuara</button>
+        <button>Shto Produkt të Ri</button>
+    </div>
+
+    <!-- Seksion për Përdoruesin -->
+    <div class="user-section" style="display: none;">
+        <h2>Zona e Përdoruesit</h2>
+        <p>Shiko produktet dhe përfito ofertat më të mira.</p>
+        <button>Shfleto Produktet</button>
+        <button>Shiko Historikun e Blerjeve</button>
+    </div>
+
 
     <section class="highlights">
         <h2>This Week's Highlights</h2>
@@ -56,6 +96,9 @@
         </div>
     </section>
 
+
+
+
     <!-- Seksioni për Dyqanet Partnere -->
     <section class="partners">
         <h2>Our Trusted Partners</h2>
@@ -77,6 +120,29 @@
             </div>
         </div>
     </section>
+
+    <section id="products-section">
+        <h2>Produktet Tona</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="/images/product1.jpg" alt="Produkt 1">
+                <h3>Produkt 1</h3>
+                <p>Çmimi: $39.90</p>
+            </div>
+            <div class="product-card">
+                <img src="/images/product2.jpg" alt="Produkt 2">
+                <h3>Produkt 2</h3>
+                <p>Çmimi: $59.90</p>
+            </div>
+            <div class="product-card">
+                <img src="/images/product3.jpg" alt="Produkt 3">
+                <h3>Produkt 3</h3>
+                <p>Çmimi: $89.90</p>
+            </div>
+        </div>
+    </section>
+
+
     <section class="why-choose-us">
         <h2>PSE TË NA ZGJIDHNI NE?</h2>
         <div class="features-container">
@@ -104,29 +170,8 @@
     </section>
 
 
-    <section class="special-offers">
-        <h2>Ofertat Speciale</h2>
-        <div class="offers-container">
-            <div class="offer-item">
-                <img src="/images/Kostume.jpg" alt="Ofertë 1">
-                <h3>50% Ulje në Kostume</h3>
-                <p>Zgjidhni kostumin tuaj të preferuar me zbritje ekskluzive.</p>
-                <button>Shiko Ofertën</button>
-            </div>
-            <div class="offer-item">
-                <img src="/images/Blouse.jpg" alt="Ofertë 2">
-                <h3>Këmishë 1 + 1</h3>
-                <p>Blej 1 këmishe dhe merrni të dytën falas. Oferta zgjat deri në fund të muajit!</p>
-                <button>Shiko Ofertën</button>
-            </div>
-            <div class="offer-item">
-                <img src="/images/Premium.jpg" alt="Ofertë 3">
-                <h3>30% Ulje në Pallto</h3>
-                <p>Përballoni dimrin me stil dhe zbritje.</p>
-                <button>Shiko Ofertën</button>
-            </div>
-        </div>
-    </section>
+
+
     <section class="faqs">
         <h2>Pyetje të Shpeshta (FAQs)</h2>
         <div class="faq-container">
@@ -151,9 +196,118 @@
         </div>
     </section>
 
+
+    <section class="special-offers">
+        <h2>Ofertat Speciale</h2>
+        <div class="offers-container">
+            <div class="offer-banner" onclick="viewOffersPage()">
+                <img src="/images/special-offers-banner.jpg" alt="Ofertat Speciale">
+                <div class="offer-overlay">
+                    <h3>Shiko Ofertat Tona Ekskluzive</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function viewOffersPage() {
+            // Ridrejto te faqja "shop.html" për të parë ofertat
+            window.location.href = "/shop.html";
+        }
+    </script>
+
+
+
+
+
+
+    <section class="client-stories">
+        <h2 class="section-title">Historitë e Klientëve</h2>
+        <div class="stories-container">
+            <div class="story">
+                <img src="/images/client1.jpg" alt="Klienti 1" class="client-photo">
+                <blockquote>
+                    "Shërbimet dhe cilësia e produkteve janë të jashtëzakonshme! Unë e rekomandoj platformën për këdo që kërkon elegancë dhe cilësi."
+                </blockquote>
+                <p class="client-name">- Arlinda Hoxha</p>
+            </div>
+            <div class="story">
+                <img src="/images/client2.jpg" alt="Klienti 2" class="client-photo">
+                <blockquote>
+                    "Kostumet e blera nga kjo platformë janë perfekte për eventet e mia të rëndësishme. Jam shumë e kënaqur!"
+                </blockquote>
+                <p class="client-name">- Blerta Krasniqi</p>
+            </div>
+            <div class="story">
+                <img src="/images/client3.jpg" alt="Klienti 3" class="client-photo">
+                <blockquote>
+                    "Transport i shpejtë dhe mbështetje ndaj klientit që të bën të ndihesh i veçantë. Do të blej sërish!"
+                </blockquote>
+                <p class="client-name">- Besnik Gashi</p>
+            </div>
+        </div>
+    </section>
+    <section class="discover-style">
+        <h2 class="section-title">Zbuloni Stilin Tuaj</h2>
+        <p class="section-description">Eksploroni koleksionet tona bazuar në stilin tuaj të preferuar dhe zbuloni më të mirën që ne ofrojmë.</p>
+        <div class="style-categories">
+            <div class="style-category">
+                <img src="/images/casual.jpg" alt="Casual Style">
+                <h3>Casual</h3>
+                <button class="explore-button">Eksploro</button>
+            </div>
+            <div class="style-category">
+                <img src="/images/elegant.jpg" alt="Elegant Style">
+                <h3>Elegant</h3>
+                <button class="explore-button">Eksploro</button>
+            </div>
+            <div class="style-category">
+                <img src="/images/sportive.jpg" alt="Sportive Style">
+                <h3>Sportive</h3>
+                <button class="explore-button">Eksploro</button>
+            </div>
+            <div class="style-category">
+                <img src="/images/classic.jpg" alt="Classic Style">
+                <h3>Klasike</h3>
+                <button class="explore-button">Eksploro</button>
+            </div>
+        </div>
+    </section>
+    <section class="happy-clients">
+        <h2 class="section-title">Klientët Tanë të Kënaqur</h2>
+        <p class="section-description">Lexoni se çfarë thonë klientët tanë për përvojat e tyre.</p>
+        <div class="client-feedback-container">
+            <div class="client-feedback">
+                <img src="/images/client1.jpg" alt="Client 1">
+                <blockquote>"Shërbimi ishte i jashtëzakonshëm! Produktet janë të cilësisë më të lartë."</blockquote>
+                <p>- Arlinda M.</p>
+                <div class="client-rating">
+                    ⭐⭐⭐⭐⭐
+                </div>
+            </div>
+            <div class="client-feedback">
+                <img src="/images/client2.jpg" alt="Client 2">
+                <blockquote>"Përvoja ime me INDUENDUM ka qenë fantastike. Do të rikthehem përsëri."</blockquote>
+                <p>- Blerim K.</p>
+                <div class="client-rating">
+                    ⭐⭐⭐⭐⭐
+                </div>
+            </div>
+            <div class="client-feedback">
+                <img src="/images/client3.jpg" alt="Client 3">
+                <blockquote>"Produktet janë të bukura dhe shumë praktike. E rekomandoj shumë!"</blockquote>
+                <p>- Era D.</p>
+                <div class="client-rating">
+                    ⭐⭐⭐⭐⭐
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="footer-container">
-            <p>&copy; 2024 Mixtas. All rights reserved.</p>
+            <p>&copy; 2024 INDUENDUM. All rights reserved.</p>
         </div>
     </footer>
     <script src="/js/script.js"></script>

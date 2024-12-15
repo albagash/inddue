@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produktet - INDUENDUM</title>
+    <link rel="stylesheet" href="/css/products.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <h1 class="logo">INDUENDUM</h1>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/products.html" class="active">Products</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="products-main">
+        <h2>Shfleto Produktet Tona</h2>
+        <div class="filter-container">
+            <select id="brand-filter">
+                <option value="">Filtroni sipas Brendeve</option>
+                <option value="Nike">Nike</option>
+                <option value="Adidas">Adidas</option>
+                <option value="Puma">Puma</option>
+            </select>
+            <select id="price-filter">
+                <option value="">Filtroni sipas Çmimit</option>
+                <option value="low-to-high">Nga më i ulëti te më i larti</option>
+                <option value="high-to-low">Nga më i larti te më i ulëti</option>
+            </select>
+        </div>
+
+        <div class="products-grid" id="products-grid">
+            <!-- Këtu do të shfaqen produktet -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 INDUENDUM. All rights reserved.</p>
+    </footer>
+    <script src="/js/products.js"></script>
+</body>
+</html>

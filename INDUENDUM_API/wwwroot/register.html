@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regjistrohu - INDUENDUM</title>
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+<body class="register-body">
+    <div class="register-container">
+        <div class="register-logo">
+            <img src="/images/logo.png" alt="INDUENDUM Logo">
+        </div>
+        <h2>Regjistrohu</h2>
+        <p>Krijo një llogari dhe fillo të eksplorosh koleksionet tona!</p>
+        <form id="register-form" class="register-form">
+            <input id="register-fullname" type="text" placeholder="Emri i Plotë" required>
+            <input id="register-email" type="email" placeholder="Email" required>
+            <input id="register-password" type="password" placeholder="Fjalëkalimi" required>
+            <select id="register-role" required>
+                <option value="User">Përdorues</option>
+                <option value="Company">Kompani</option>
+                <option value="Admin">Administrator</option>
+            </select>
+            <button type="submit">Regjistrohu</button>
+        </form>
+        <!-- Div për mesazhet e statusit -->
+        <div id="message" class="message"></div>
+    </div>
+    <script src="/js/login-register.js"></script>
+</body>
+</html>
