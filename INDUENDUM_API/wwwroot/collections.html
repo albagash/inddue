@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koleksionet Tona</title>
+    <link rel="stylesheet" href="/css/collections.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>Koleksionet Tona</h1>
+        <p>Zbuloni koleksionet më të fundit dhe votoni për të preferuarin tuaj!</p>
+    </header>
+
+    <section class="style-tips">
+        <h2>Këshilla për Stilin</h2>
+        <div class="tips-container">
+            <div class="tip-card">
+                <h3>Kombino me Kujdes</h3>
+                <p>Zgjidh ngjyrat dhe materialet që përshtaten më mirë me koleksionet tua.</p>
+            </div>
+            <div class="tip-card">
+                <h3>Shto Aksesore</h3>
+                <p>Aksesoret e duhur mund të bëjnë diferencën në çdo veshje.</p>
+            </div>
+            <div class="tip-card">
+                <h3>Beso Stilit Tënd</h3>
+                <p>Zgjidh atë që të bën të ndihesh vetvetja dhe i sigurt.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="create-collection">
+        <h2>Krijoni Koleksionin Tuaj</h2>
+        <p>Zvarritni artikujt që dëshironi në zonën e koleksionit dhe krijoni stilin tuaj unik!</p>
+        <div class="collection-creator">
+            <!-- Biblioteka e artikujve -->
+            <div class="item-library">
+                <h3>Artikujt</h3>
+                <div class="item" draggable="true">
+                    <img src="/images/stk.jpg" alt="Item 1">
+                    <p>Këpucë</p>
+                </div>
+                <div class="item" draggable="true">
+                    <img src="/images/fustan.jpg" alt="Item 2">
+                    <p>Fund</p>
+                </div>
+                <div class="item" draggable="true">
+                    <img src="/images/rollk.jpg" alt="Item 3">
+                    <p>Bluzë</p>
+                </div>
+            </div>
+
+            <!-- Zona e Koleksionit -->
+            <div class="collection-area">
+                <h3>Zona e Koleksionit</h3>
+                <div class="drop-area">
+                    <p>Tërhiqni artikuj këtu për të krijuar koleksionin tuaj!</p>
+                </div>
+            </div>
+        </div>
+        <button id="save-collection">Ruaj Koleksionin</button>
+        <div id="confirmation-message" style="display: none;">
+            <p>Koleksioni juaj u ruajt me sukses!</p>
+        </div>
+    </section>
+
+
+
+    <!-- Koleksionet -->
+    <main class="collections-grid">
+        <div class="collection-card" data-id="1">
+            <img src="/images/biznis2.png" alt="Stili Klasik dhe Elegant">
+        </div>
+        <div class="collection-card" data-id="2">
+            <img src="/images/biznis3.jpg" alt="Veshje Profesionale për Biznes">
+        </div>
+        <div class="collection-card" data-id="3">
+            <img src="/images/biznis4.jpg" alt="Koleksioni Modern Chic">
+        </div>
+        <div class="collection-card" data-id="4">
+            <img src="/images/biznis5.jpg" alt="Veshje Përditshmërie Komode">
+        </div>
+        <div class="collection-card" data-id="5">
+            <img src="/images/biznis6.png" alt="Koleksioni i Modës Dimërore">
+        </div>
+        <div class="collection-card" data-id="6">
+            <img src="/images/biznis8.jpg" alt="Stili Urban dhe Streetwear">
+        </div>
+        <div class="collection-card" data-id="7">
+            <img src="/images/biznis1.jpg" alt="Veshje me Ngjyra të Guximshme">
+        </div>
+        <div class="collection-card" data-id="8">
+            <img src="/images/biznis9.png" alt="Stili Veror dhe i Lehtë">
+        </div>
+        <div class="collection-card" data-id="9">
+            <img src="/images/biznis10.jpg" alt="Klasike me Prekje Moderniteti">
+        </div>
+        <div class="collection-card" data-id="10">
+            <img src="/images/biznis11.jpg" alt="Moda e Luksit dhe Retro">
+        </div>
+        <div class="collection-card" data-id="11">
+            <img src="/images/biznis12.jpg" alt="Veshje e Thjeshtë, Por Sharmante">
+        </div>
+        <div class="collection-card" data-id="12">
+            <img src="/images/biznis13.jpg" alt="Kombinime të Sofistikuara për Evente">
+        </div>
+        <div class="collection-card" data-id="13">
+            <img src="/images/biznis14.png" alt="Stili Minimalist dhe i Rafinuar">
+        </div>
+        <div class="collection-card" data-id="14">
+            <img src="/images/biznis15.jpg" alt="Moda e Rrugës me Aksesore">
+        </div>
+        <div class="collection-card" data-id="15">
+            <img src="/images/biznis16.jpg" alt="Veshje për Mbrëmje të Veçanta">
+        </div>
+    </main>
+
+    <!-- Votimet -->
+    <section class="voting-results">
+        <h2>Rezultatet e Votimeve</h2>
+        <div id="results">
+            <p id="results-1">Casual Collection: Votat: <span>0</span> (0%)</p>
+            <p id="results-2">Elegant Collection: Votat: <span>0</span> (0%)</p>
+            <p id="results-3">Sportive Collection: Votat: <span>0</span> (0%)</p>
+            <p id="results-4">Classic Collection: Votat: <span>0</span> (0%)</p>
+            <p id="results-5">Vintage Collection: Votat: <span>0</span> (0%)</p>
+            <!-- Vazhdo për koleksionet e tjera -->
+        </div>
+    </section>
+
+
+    <section class="share-style">
+        <h2>Shprehni Stilin Tuaj</h2>
+        <form id="share-style-form">
+            <input type="text" id="style-title" placeholder="Titulli i Stilimit" required>
+            <input type="file" id="style-image" accept="image/*" required>
+            <button type="submit">Ndani Stilin</button>
+        </form>
+        <div id="shared-styles"></div>
+    </section>
+
+    <section class="user-reviews">
+        <h2>Vlerësimet e Përdoruesve</h2>
+        <p>Ndani mendimin tuaj për koleksionet tona!</p>
+
+        <!-- Forma për të lënë vlerësim -->
+        <div class="review-form">
+            <label for="review-stars">Zgjedh Yjet:</label>
+            <div class="stars" id="review-stars">
+                <span class="star" data-value="1">☆</span>
+                <span class="star" data-value="2">☆</span>
+                <span class="star" data-value="3">☆</span>
+                <span class="star" data-value="4">☆</span>
+                <span class="star" data-value="5">☆</span>
+            </div>
+            <textarea id="review-comment" rows="4" placeholder="Shkruani komentin tuaj këtu..."></textarea>
+            <button id="submit-review" class="submit-btn">Dërgo Vlerësimin</button>
+        </div>
+
+        <!-- Butoni për shfaqjen e komenteve -->
+        <div class="review-toggle">
+            <button id="show-reviews-btn" class="toggle-btn">Shfaq Komentet</button>
+        </div>
+
+        <!-- Lista e komenteve -->
+        <div class="review-list" id="review-list" style="display: none;">
+            <h3>Komente të fundit</h3>
+            <div id="reviews-container">
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 INDUENDUM. Të gjitha të drejtat e rezervuara.</p>
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+
+    <script src="./js/collections.js"></script>
+
+</body>
+</html>

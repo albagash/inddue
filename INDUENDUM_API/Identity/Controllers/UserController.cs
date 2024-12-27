@@ -122,6 +122,57 @@ public class UsersController : ControllerBase
             return StatusCode(500, $"Gabim i brendshëm gjatë fshirjes së përdoruesit: {ex.Message}");
         }
     }
+
+    // PUT: /api/users/{id}
+    [HttpPut("{id}")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> UpdateUser(string id, [FromBody] UpdateUserModel model)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        var user = await _userManager.FindByIdAsync(id);
+        if (user == null)
+        {
+            return NotFound(new { message = "Përdoruesi nuk u gjet." });
+        }
+
+        user.FullName = model.FullName;
+        user.Email = model.Email;
+
+        var emailUpdateResult = await _userManager.UpdateAsync(user);
+        if (!emailUpdateResult.Succeeded)
+        {
+            return BadRequest(new { message = "Gabim gjatë përditësimit të përdoruesit." });
+        }
+
+        var currentRoles = await _userManager.GetRolesAsync(user);
+        if (!currentRoles.Contains(model.Role))
+        {
+            await _userManager.RemoveFromRolesAsync(user, currentRoles);
+            await _userManager.AddToRoleAsync(user, model.Role);
+        }
+
+        return Ok(new
+        {
+            id = user.Id,
+            fullName = user.FullName,
+            email = user.Email,
+            role = model.Role
+        });
+    }
+
+
+    // Modeli për përditësimin e përdoruesit
+    public class UpdateUserModel
+    {
+        public string? FullName { get; set; }
+        public string? Email { get; set; }
+        public string? Role { get; set; } // Roli opsional
+    }
+
 }
 
 // Modeli për regjistrimin e përdoruesit

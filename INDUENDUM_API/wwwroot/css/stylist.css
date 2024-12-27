@@ -1,0 +1,275 @@
+﻿/* Stilimi bazë i faqes */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #2C3E50, #8E44AD);
+    color: #FFFFFF;
+    overflow-x: hidden;
+}
+
+/* Header */
+.header-stylist {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(90deg, #2C3E50, #6A0572);
+    border-bottom: 3px solid #F1C40F;
+}
+
+    .header-stylist h1 {
+        font-size: 2.8rem;
+        color: #F1C40F;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+    }
+
+    .header-stylist p {
+        font-size: 1.2rem;
+        color: #EAECEE;
+        margin-bottom: 20px;
+    }
+
+/* Ngarkimi i fotos */
+.upload-photo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+    .upload-photo label {
+        font-size: 1.2rem;
+        color: #F1C40F;
+        font-weight: bold;
+    }
+
+    .upload-photo input {
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        background-color: #FFFFFF;
+        color: #2C3E50;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .upload-photo input:hover {
+            background-color: #F1C40F;
+            color: #FFFFFF;
+        }
+
+/* Zona e stilizimit */
+.stylist-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.stylist-area {
+    border: 3px dashed #F1C40F;
+    border-radius: 12px;
+    width: 300px;
+    height: 450px;
+    background-color: #2C3E50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    color: #D5D8DC;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+    .stylist-area:hover {
+        transform: scale(1.02);
+        border-color: #D4AC0D;
+    }
+
+    .stylist-area img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .stylist-area p {
+        z-index: 2;
+        position: absolute;
+        text-align: center;
+        font-size: 1rem;
+        color: #FFFFFF;
+    }
+
+/* Artikujt për stilim */
+.stylist-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+    .stylist-items h3 {
+        text-align: center;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        color: #F1C40F;
+    }
+
+    .stylist-items .item {
+        width: 100px;
+        height: 100px;
+        background-color: #FFFFFF;
+        border: 2px solid #F1C40F;
+        border-radius: 10px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: grab;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+        .stylist-items .item:hover {
+            background-color: #F1C40F;
+            transform: scale(1.1);
+        }
+
+        .stylist-items .item img {
+            width: 80%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+/* Butoni i ruajtjes */
+.save-styling-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #F1C40F;
+    color: #2C3E50;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+    .save-styling-btn:hover {
+        background-color: #D4AC0D;
+        color: #FFFFFF;
+        transform: scale(1.1);
+    }
+
+/* Për stilimin e elementëve të tërhequr */
+.dragged-item {
+    position: absolute;
+    cursor: move;
+}
+/* Drop Area */
+.drop-area {
+    width: 100%;
+    height: 400px; /* Mund ta rrisim në varësi të përmasës së dëshiruar */
+    border: 2px dashed #F1C40F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2C1E50;
+    border-radius: 12px;
+    overflow: hidden; /* Siguron që imazhi të mos dalë jashtë kufijve */
+    position: relative;
+}
+
+    .drop-area img {
+        width: 100%; /* Mbush gjerësinë e zonës */
+        height: 100%; /* Mbush lartësinë e zonës */
+        object-fit: cover; /* Siguron që imazhi të mbulojë hapësirën e dhënë */
+        object-position: center; /* Qendërzon imazhin */
+    }
+
+    .drop-area p {
+        position: absolute; /* Mbaj tekstin mbi imazhin */
+        color: #F1C40F;
+        font-size: 1.2rem;
+        text-align: center;
+        display: none; /* Fshi tekstin kur ngarkohet imazhi */
+    }
+.user-photo {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1;
+}
+
+#user-photo-area {
+    width: 100%;
+    height: 500px;
+    border: 2px dashed #D5D8DC;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #2C1E50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stylist-items .item {
+    cursor: grab;
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #F1C40F;
+    border-radius: 8px;
+    background-color: #2C1E50;
+    color: white;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+    .stylist-items .item:hover {
+        transform: scale(1.1);
+        background-color: #F1C40F;
+        color: #2C1E50;
+    }
+
+    .stylist-items .item img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+    }
+/* Seksioni Stilisti Virtual */
+.virtual-stylist-link {
+    background: linear-gradient(135deg, #2B2B2B, #4B0082);
+    padding: 50px;
+    text-align: center;
+    border-radius: 20px;
+    margin: 20px auto;
+    width: 90%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+    .virtual-stylist-link h2 {
+        font-size: 2.5rem;
+        color: #FFD700; /* Ngjyrë ari për titullin */
+        margin-bottom: 15px;
+        text-shadow: 0 0 10px #FFD700, 0 0 20px #FFC300;
+    }
+
+    .virtual-stylist-link p {
+        font-size: 1.2rem;
+        color: #FFFFFF;
+        line-height: 1.8;
+        margin-bottom: 25px;
+        max-width: 700px;
+        margin: 0 auto 30px auto;
+    }
+

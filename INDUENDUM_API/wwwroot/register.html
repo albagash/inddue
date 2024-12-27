@@ -3,30 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Krijo një llogari në INDUENDUM dhe zbuloni koleksionet më të mira të modës dhe shërbimeve.">
     <title>Regjistrohu - INDUENDUM</title>
-    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/register.css?v=1.0">
+    <script src="/js/login-register.js" defer></script>
 </head>
 <body class="register-body">
     <div class="register-container">
+        <!-- Logo -->
         <div class="register-logo">
-            <img src="/images/logo.png" alt="INDUENDUM Logo">
+            <img src="/images/lego.jpg" alt="INDUENDUM Logo" class="logo-image">
+
+
+
         </div>
-        <h2>Regjistrohu</h2>
-        <p>Krijo një llogari dhe fillo të eksplorosh koleksionet tona!</p>
+
+        <!-- Titulli -->
+        <h2 class="register-title">Krijo Llogarinë Tënde</h2>
+        <p class="register-description">Regjistrohu dhe fillo të shijosh avantazhet tona ekskluzive!</p>
+
+        <!-- Forma e Regjistrimit -->
         <form id="register-form" class="register-form">
-            <input id="register-fullname" type="text" placeholder="Emri i Plotë" required>
-            <input id="register-email" type="email" placeholder="Email" required>
-            <input id="register-password" type="password" placeholder="Fjalëkalimi" required>
-            <select id="register-role" required>
-                <option value="User">Përdorues</option>
-                <option value="Company">Kompani</option>
-                <option value="Admin">Administrator</option>
-            </select>
-            <button type="submit">Regjistrohu</button>
+            <div class="form-group">
+                <label for="register-fullname" class="form-label">Emri i Plotë</label>
+                <input id="register-fullname" type="text" class="form-input" placeholder="Shkruani emrin tuaj të plotë" required>
+            </div>
+            <div class="form-group">
+                <label for="register-email" class="form-label">Email</label>
+                <input id="register-email" type="email" class="form-input" placeholder="Shkruani email-in tuaj" required>
+            </div>
+            <div class="form-group">
+                <label for="register-password" class="form-label">Fjalëkalimi</label>
+                <input id="register-password" type="password" class="form-input" placeholder="Krijoni një fjalëkalim të sigurt" required>
+            </div>
+            <div class="form-group">
+                <label for="register-role" class="form-label">Roli</label>
+                <select id="register-role" class="form-select" required>
+                    <option value="User">Përdorues</option>
+                    <option value="Company">Kompani</option>
+                    <option value="Admin">Administrator</option>
+                </select>
+            </div>
+            <button type="submit" class="register-button">Regjistrohu</button>
         </form>
-        <!-- Div për mesazhet e statusit -->
+
+        <!-- Div për mesazhe ndihmëse -->
         <div id="message" class="message"></div>
+
+        <!-- Lidhje për ndihmë -->
+        <div class="register-helper">
+            <p>Keni llogari? <a href="/login.html" class="helper-link">Kyçu këtu</a>.</p>
+        </div>
     </div>
-    <script src="/js/login-register.js"></script>
 </body>
 </html>

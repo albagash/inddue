@@ -1,105 +1,148 @@
 ﻿body.register-body {
-    background: linear-gradient(90deg, #43A047, #66BB6A);
-    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #1e1e1e, #292929); /* Gradient më elegant dhe profesional */
+    font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    overflow: hidden;
 }
 
 .register-container {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    width: 400px;
-    padding: 30px;
+    background: rgba(255, 255, 255, 0.95); /* Sfond elegant dhe i tejdukshëm */
+    border-radius: 20px;
+    padding: 40px;
     text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1.5s ease-in-out; /* Animacion i shfaqjes */
+    position: relative;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .register-logo img {
-    max-width: 100px;
+    max-width: 120px;
     margin-bottom: 20px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hije për logon */
+    animation: bounce 2s infinite; /* Lëvizje lart-poshtë */
 }
 
-h2 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-p {
-    margin-bottom: 20px;
-    color: #555;
-    font-size: 1rem;
-}
-
-.register-form input,
-.register-form select,
-.register-form button {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    outline: none;
-}
-
-.register-form select {
-    background-color: #f9f9f9;
-}
-
-.register-form button {
-    background-color: #43A047;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-    .register-form button:hover {
-        background-color: #388E3C;
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
     }
 
-/* Për mesazhet */
-.message {
-    margin-top: 15px;
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.register-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f0c040;
+    margin-bottom: 10px;
+}
+
+.register-description {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-label {
     font-size: 0.9rem;
     color: #333;
-    display: none;
+    display: block;
+    margin-bottom: 5px;
 }
 
-    .message.success {
-        color: green;
-    }
-
-    .message.error {
-        color: red;
-    }
-/* Mesazhe për sukses dhe gabime */
-.message {
-    display: none; /* Fshihet fillimisht */
-    margin-top: 20px;
-    padding: 10px;
-    border-radius: 5px;
+.form-input,
+.form-select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
     font-size: 1rem;
-    text-align: center;
+    background: rgba(240, 240, 240, 0.8);
+    outline: none;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-    /* Suksesi */
-    .message.success {
-        display: block;
-        background-color: #d4edda;
-        color: #155724;
-        border: 1px solid #c3e6cb;
+    .form-input:focus,
+    .form-select:focus {
+        border-color: #f0c040;
+        box-shadow: 0 0 8px rgba(240, 192, 64, 0.5);
     }
 
-    /* Gabim */
-    .message.error {
-        display: block;
-        background-color: #f8d7da;
-        color: #721c24;
-        border: 1px solid #f5c6cb;
+.register-button {
+    width: 100%;
+    padding: 12px;
+    background: #f0c040;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+    .register-button:hover {
+        background-color: #d4a92a;
+        transform: scale(1.05);
     }
 
+.helper-link {
+    color: #f0c040;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+    .helper-link:hover {
+        color: #d4a92a;
+    }
+
+/* Efekte vizuale */
+.register-container:before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(240, 192, 64, 0.15), transparent);
+    z-index: -1;
+    animation: rotateBackground 10s linear infinite;
+}
+
+@keyframes rotateBackground {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

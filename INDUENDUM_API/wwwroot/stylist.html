@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stilisti Virtual</title>
+    <link rel="stylesheet" href="/css/stylist.css">
+    
+
+</head>
+<body>
+    <header class="header-stylist">
+        <h1>Stilisti Virtual</h1>
+        <p>Ngarkoni foton tuaj dhe kombinoni artikujt për të krijuar stilin tuaj unik!</p>
+    </header>
+    <main class="stylist-main">
+        <!-- Ngarkimi i fotos -->
+        <div class="upload-photo">
+            <label for="upload-photo">Ngarko Foto:</label>
+            <input type="file" id="upload-photo" accept="image/*">
+        </div>
+
+        <!-- Zona e stilizimit -->
+        <div class="stylist-area">
+            <div id="user-photo-area">
+                <p>Ngarkoni një foto dhe tërhiqni artikuj këtu.</p>
+            </div>
+        </div>
+
+        <!-- Artikujt për stilim -->
+        <div class="stylist-items">
+            <h3>Artikujt për Stilim</h3>
+            <div class="item" draggable="true">
+                <img src="/images/kepuce1.jpg" alt="Këpucë">
+            </div>
+            <div class="item" draggable="true">
+                <img src="/images/fustan1.jpg" alt="Fustan">
+            </div>
+            <div class="item" draggable="true">
+                <img src="/images/jacket1.jpg" alt="Xhaketë">
+            </div>
+        </div>
+    </main>
+    <script src="/js/stylist.js"></script>
+</body>
+</html>

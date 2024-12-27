@@ -1,0 +1,482 @@
+﻿/* Sfondi dhe Header */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #6A0572, #2C1E50);
+    color: #FFFFFF;
+}
+
+.header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(90deg, #6A0572, #8E44AD);
+    color: #F1C40F;
+    border-bottom: 4px solid #F39C12;
+}
+
+    .header h1 {
+        font-size: 3.5rem;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+    }
+
+    .header p {
+        font-size: 1.3rem;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+.style-tips {
+    background: #311B92;
+    color: #FFF;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+    .style-tips h2 {
+        margin-bottom: 30px;
+        font-size: 2.5rem;
+        color: #FDD835;
+        text-transform: uppercase;
+    }
+
+.tips-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.tip-card {
+    background: #4A148C;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+    .tip-card h3 {
+        margin-bottom: 10px;
+        font-size: 1.5rem;
+        color: #FDD835;
+    }
+
+    .tip-card p {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #EEE;
+    }
+.share-style {
+    background: #4A148C;
+    color: #FFF;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+    .share-style h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #FDD835;
+    }
+
+#share-style-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 500px;
+}
+
+    #share-style-form input, #share-style-form button {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+    }
+
+    #share-style-form button {
+        background: #FDD835;
+        color: #4A148C;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        #share-style-form button:hover {
+            background: #FFEB3B;
+        }
+
+#shared-styles {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.collection-card {
+    position: relative;
+    overflow: hidden;
+    background: #311B92;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .collection-card img {
+        width: 100%;
+        height: auto;
+        max-height: 200px; /* Siguron një lartësi maksimale për të shmangur shtrembërimin */
+        object-fit: contain; /* Siguron që fotografia të shfaqet e plotë */
+        border-radius: 10px;
+    }
+
+.collection-overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #FFF;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+    border-radius: 0 0 10px 10px;
+}
+
+
+.create-collection {
+    text-align: center;
+    padding: 30px;
+    background-color: #2C1E50;
+    color: #FFFFFF;
+}
+
+    .create-collection h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #F1C40F;
+    }
+
+    .create-collection p {
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+        color: #D5D8DC;
+    }
+
+.collection-creator {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.item-library, .collection-area {
+    flex: 1;
+    border: 2px dashed #F39C12;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #6A0572;
+}
+
+    .item-library h3, .collection-area h3 {
+        text-align: center;
+        color: #F1C40F;
+        margin-bottom: 15px;
+    }
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: grab;
+    border: 1px solid #F1C40F;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #FFFFFF;
+}
+
+    .item img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+
+    .item p {
+        margin: 0;
+        font-size: 1rem;
+        color: #2C1E50;
+    }
+
+.drop-area {
+    min-height: 150px;
+    border: 2px dashed #F1C40F;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #2C1E50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+    .drop-area.highlight {
+        border-color: #F39C12;
+        background-color: #FFF9E3;
+    }
+
+.item.in-collection {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+button#save-collection {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #F1C40F;
+    border: none;
+    color: #2C1E50;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    button#save-collection:hover {
+        background-color: #F39C12;
+        color: #FFFFFF;
+    }
+
+#confirmation-message {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #F1C40F;
+}
+
+
+
+/* Seksioni i Koleksioneve */
+.collections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 50px 20px;
+}
+
+.collection-card {
+    background-color: #2C1E50;
+    border-radius: 15px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .collection-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.7);
+    }
+
+    .collection-card img {
+        width: 100%; /* Mbush gjerësinë e kartës */
+        height: 100%; /* Mbush lartësinë e kartës */
+        object-fit: contain; /* Siguron që imazhi të jetë i plotë pa u prerë */
+        object-position: center; /* Qendërzon imazhin brenda kartës */
+        border-radius: 10px; /* Këndet e rrumbullakëta */
+        transition: transform 0.3s ease; /* Efekti vizual në hover */
+    }
+
+        /* Efekti Hover për imazhet */
+        .collection-card img:hover {
+            transform: scale(1.05); /* Rritje pak në përmasa në hover */
+        }
+
+.user-reviews {
+    padding: 50px;
+    background-color: #8E44AD;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+    .user-reviews h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #F1C40F;
+    }
+
+    .user-reviews p {
+        margin-bottom: 30px;
+        font-size: 1.2rem;
+        color: #D5D8DC;
+    }
+
+.review-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+    .review-form label {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: #FFFFFF;
+    }
+
+.stars {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+    .stars .star {
+        font-size: 2rem;
+        color: #FFFFFF;
+        transition: color 0.3s ease;
+    }
+
+        .stars .star:hover,
+        .stars .star.selected {
+            color: #F1C40F;
+        }
+
+textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.submit-btn,
+.toggle-btn {
+    background-color: #F1C40F;
+    color: #2C1E50;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .submit-btn:hover,
+    .toggle-btn:hover {
+        background-color: #F39C12;
+    }
+
+.review-list {
+    margin-top: 20px;
+}
+
+    .review-list h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        color: #F1C40F;
+    }
+
+#reviews-container {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.review-item {
+    background-color: #6A0572;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+    .review-item p {
+        margin: 0;
+        color: #FFFFFF;
+        font-size: 1rem;
+    }
+
+/* Seksioni i Votimeve */
+.voting-results {
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #6A0572, #2C1E50);
+    color: #F1C40F;
+    text-align: center;
+    border-radius: 15px;
+    margin: 30px auto;
+    max-width: 800px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+    .voting-results h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #F7DC6F;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .voting-results p {
+        font-size: 1.2rem;
+        margin: 10px 0;
+        background-color: #8E44AD;
+        padding: 10px 20px;
+        border-radius: 8px;
+        color: #FFF;
+        display: inline-block;
+        text-align: left;
+        width: 80%;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .voting-results p:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+            background-color: #9B59B6;
+        }
+
+    /* Efekte për përqindjet */
+    .voting-results span {
+        font-weight: bold;
+        color: #F7DC6F;
+    }
+
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #2C1E50, #6A0572);
+    color: #F1C40F;
+    margin-top: 20px;
+    border-top: 4px solid #F39C12;
+}
+
+    .footer p {
+        margin: 10px 0;
+        font-size: 1.2rem;
+    }
+
+    .footer .social-links a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #F1C40F;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+        .footer .social-links a:hover {
+            color: #F39C12;
+        }

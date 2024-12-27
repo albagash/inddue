@@ -3,22 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kyçu në INDUENDUM dhe fillo të eksplorosh koleksionet më të mira të modës.">
     <title>Kyçu - INDUENDUM</title>
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/login.css?v=1.0">
     <script src="/js/login-register.js" defer></script>
+
+
 </head>
 <body class="login-body">
     <div class="login-container">
+        <!-- Logo e Platformës -->
         <div class="login-logo">
-            <img src="/images/logo.png" alt="INDUENDUM Logo">
+            <img src="/images/lego.jpg" alt="INDUENDUM Logo" class="logo-image">
+
         </div>
-        <h2>Kyçu</h2>
-        <p>Kyçu dhe fillo të eksplorosh koleksionet tona!</p>
-        <form id="login-form">
-            <input id="login-email" type="email" placeholder="Email" required>
-            <input id="login-password" type="password" placeholder="Fjalëkalimi" required>
-            <button type="submit">Kyçu</button>
+
+        <!-- Titulli -->
+        <h2 class="login-title">Mirësevini në INDUENDUM</h2>
+        <p class="login-description">Hyni në llogarinë tuaj dhe zbuloni ofertat ekskluzive!</p>
+
+        <!-- Forma e Kyçjes -->
+        <form id="login-form" class="login-form">
+            <div class="form-group">
+                <label for="login-email" class="form-label">Email</label>
+                <input id="login-email" type="email" class="form-input" placeholder="Shkruani email-in tuaj" required>
+            </div>
+            <div class="form-group">
+                <label for="login-password" class="form-label">Fjalëkalimi</label>
+                <input id="login-password" type="password" class="form-input" placeholder="Shkruani fjalëkalimin" required>
+            </div>
+            <button type="submit" class="login-button">Kyçu</button>
         </form>
+
+        <!-- Mesazhe Ndihmëse -->
+        <div class="login-helper">
+            <p>Nuk keni llogari? <a href="/register.html" class="helper-link">Regjistrohu këtu</a>.</p>
+            <p><a href="/reset-password.html" class="helper-link">Keni harruar fjalëkalimin?</a></p>
+        </div>
     </div>
+    
+
 </body>
 </html>

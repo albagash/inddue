@@ -3,46 +3,394 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produktet - INDUENDUM</title>
-    <link rel="stylesheet" href="/css/products.css">
+    <title>Products - INDUENDUM</title>
+    <link rel="stylesheet" href="/css/products.css?v=2.0">
 </head>
 <body>
+    <!-- Navbar -->
     <header class="navbar">
-        <div class="container">
-            <h1 class="logo">INDUENDUM</h1>
-            <nav>
-                <ul>
-                    <li><a href="/index.html">Home</a></li>
-                    <li><a href="/products.html" class="active">Products</a></li>
-                </ul>
-            </nav>
-        </div>
+        <div class="logo">INDUENDUM</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Shop</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li>
+                    <a href="#" id="cart-icon">
+                        Cart (<span id="cart-count">0</span>)
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
-    <main class="products-main">
-        <h2>Shfleto Produktet Tona</h2>
-        <div class="filter-container">
-            <select id="brand-filter">
-                <option value="">Filtroni sipas Brendeve</option>
-                <option value="Nike">Nike</option>
-                <option value="Adidas">Adidas</option>
-                <option value="Puma">Puma</option>
-            </select>
-            <select id="price-filter">
-                <option value="">Filtroni sipas Çmimit</option>
-                <option value="low-to-high">Nga më i ulëti te më i larti</option>
-                <option value="high-to-low">Nga më i larti te më i ulëti</option>
-            </select>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Discover Our Products</h1>
+        <p>Explore our premium collections and find what suits you best.</p>
+    </section>
+
+    <!-- Filters Bar -->
+    <div class="filters-bar">
+        <button class="filter-btn" id="price-btn">Filter by Price</button>
+        <button class="filter-btn" id="size-btn">Filter by Size</button>
+        <button class="filter-btn" id="color-btn">Filter by Color</button>
+        <button class="filter-btn" id="season-btn">Filter by Season</button>
+        <button class="reset-btn" id="reset-filters">Reset Filters</button>
+    </div>
+
+    <!-- Dropdowns for Filters -->
+    <div class="filter-dropdown" id="price-dropdown">
+        <label for="price-filter">Price:</label>
+        <select id="price-filter">
+            <option value="">All</option>
+            <option value="low">Under €50</option>
+            <option value="mid">€50 - €100</option>
+            <option value="high">Above €100</option>
+        </select>
+    </div>
+
+    <div class="filter-dropdown" id="size-dropdown">
+        <label for="size-filter">Size:</label>
+        <select id="size-filter">
+            <option value="">All Sizes</option>
+            <option value="S">Small</option>
+            <option value="M">Medium</option>
+            <option value="L">Large</option>
+        </select>
+    </div>
+
+    <div class="filter-dropdown" id="color-dropdown">
+        <label for="color-filter">Color:</label>
+        <select id="color-filter">
+            <option value="">All Colors</option>
+            <option value="black">Black</option>
+            <option value="white">White</option>
+            <option value="blue">Blue</option>
+            <option value="red">Red</option>
+        </select>
+    </div>
+
+    <div class="filter-dropdown" id="season-dropdown">
+        <label for="season-filter">Season:</label>
+        <select id="season-filter">
+            <option value="">All Seasons</option>
+            <option value="summer">Summer</option>
+            <option value="winter">Winter</option>
+            <option value="spring">Spring</option>
+            <option value="autumn">Autumn</option>
+        </select>
+    </div>
+
+    <!-- Product Grid -->
+    <section class="product-grid">
+        <div class="product-card" data-price="120" data-size="M" data-color="black" data-season="autumn">
+            <img src="images/Burberry.jpg" alt="Burberry Jacket">
+            <h3>Burberry Jacket</h3>
+            <p>€120</p>
+            <p>⭐⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Burberry Jacket', 120)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="150" data-size="L" data-color="white" data-season="autumn">
+            <img src="images/BurberryJ.jpg" alt="Burberry Jacket">
+            <h3>Green Burberry</h3>
+            <p>€150</p>
+            <p>⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Burberry Jacket', 150)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="60" data-size="M" data-color="white" data-season="autumn">
+            <img src="images/Zara.jpg" alt="Zara">
+            <h3>Zara Jacket</h3>
+            <p>€60</p>
+            <p>⭐⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Zara', 60)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="200" data-size="S" data-color="red" data-season="autumn">
+            <img src="images/Black.jpg" alt="Burberry Jacket">
+            <h3>Black Burberry Jacket</h3>
+            <p>€200</p>
+            <p>⭐⭐⭐</p>
+            <button onclick="addToCart('Burberry Jacket', 200)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="60" data-size="M" data-color="white" data-season="autumn">
+            <img src="images/bub.jpg" alt="Zara">
+            <h3>Zara Jacket</h3>
+            <p>€60</p>
+            <p>⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Zara', 60)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="300" data-size="L" data-color="black" data-season="autumn">
+            <img src="images/Monse.jpg" alt="Monse">
+            <h3>Under Armour Hovr</h3>
+            <p>€300</p>
+            <p>⭐⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Monse', 300)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="100" data-size="L" data-color="brown" data-season="winter">
+            <img src="images/Schott.jpg" alt="Schott">
+            <h3> Schott NYC Classic B-3 Sheepskin</h3>
+            <p>€100</p>
+            <p>⭐⭐⭐</p>
+            <button onclick="addToCart('Schott', 100)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="200" data-size="L" data-color="green" data-season="winter">
+            <img src="images/anjeun.jpg" alt="Anjeun">
+            <h3>Anjeun Jacket</h3>
+            <p>€200</p>
+            <p>⭐⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Anjeun', 200)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="150" data-size="M" data-color="brown" data-season="winter">
+            <img src="images/Lapel.jpg" alt="New Balance 574">
+            <h3>Lapel</h3>
+            <p>€150</p>
+            <p>⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Lapel', 150)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="50" data-size="L" data-color="white" data-season="winter">
+            <img src="images/Blouse.jpg" alt="Blouse">
+            <h3>Ralph Lauren</h3>
+            <p>€50</p>
+            <p>⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Blouse', 50)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="50" data-size="M" data-color="blue" data-season="winter">
+            <img src="images/Ralph.jpg" alt="Blouse">
+            <h3>Ralph Lauren</h3>
+            <p>€50</p>
+            <p>⭐⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Blouse', 50)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="70" data-size="L" data-color="green" data-season="winter">
+            <img src="images/Ral.jpg" alt="Ralph">
+            <h3>Ralph Lauren</h3>
+            <p>€70</p>
+            <p>⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Ralph', 70)">Add to Cart</button>
         </div>
 
-        <div class="products-grid" id="products-grid">
-            <!-- Këtu do të shfaqen produktet -->
+        <!-- New Products -->
+        <div class="product-card" data-price="270" data-size="M" data-color="white" data-season="winter">
+            <img src="images/chanel.jpg" alt="Perfume">
+            <h3>Chanel N'5</h3>
+            <p>€270</p>
+            <p>⭐⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Chanel', 270)">Add to Cart</button>
         </div>
-    </main>
+        <div class="product-card" data-price="270" data-size="M" data-color="black" data-season="winter">
+            <img src="images/noit.jpg" alt="Chanel">
+            <h3>Chanel - Coco Noir</h3>
+            <p>€270</p>
+            <p>⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Chanel', 270)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="150" data-size="M" data-color="black" data-season="winter">
+            <img src="images/Lema.jpg" alt="Gaultier">
+            <h3>Jean Paul Gaultier - Le Male</h3>
+            <p>€150</p>
+            <p>⭐⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Gaultier', 150)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="350" data-size="L" data-color="brown" data-season="winter">
+            <img src="images/nomade.jpg" alt="Vuitton">
+            <h3>Louis Vuitton - Ombre Nomade</h3>
+            <p>€350</p>
+            <p>⭐⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Vuitton', 350)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="600" data-size="L" data-color="brown" data-season="winter">
+            <img src="images/and.jpg" alt="Xerjoff">
+            <h3>Xerjoff - Alexandria II</h3>
+            <p>€600</p>
+            <p>⭐⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Xerjoff', 600)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="340" data-size="M" data-color="blue" data-season="winter">
+            <img src="images/amu.jpg" alt="Amouage">
+            <h3>Amouage Interlude</h3>
+            <p>€340</p>
+            <p>⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Amouage', 600)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="80" data-size="L" data-color="white" data-season="summer">
+            <img src="images/cos1.jpg" alt="Shirt">
+            <h3>Shirt</h3>
+            <p>€80</p>
+            <p>⭐⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Shirt', 80)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="40" data-size="S" data-color="blue" data-season="autumn">
+            <img src="images/shirt1.jpg" alt="Zara">
+            <h3>Zara</h3>
+            <p>€40</p>
+            <p>⭐⭐⭐</p>
+            <button onclick="addToCart('Zara', 40)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="50" data-size="L" data-color="red" data-season="autumn">
+            <img src="images/shirt2.jpg" alt="zara">
+            <h3>Zara</h3>
+            <p>€50</p>
+            <p>⭐⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Zara', 50)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="70" data-size="M" data-color="brown" data-season="autumn">
+            <img src="images/shirt3.jpg" alt="J.VER ">
+            <h3>J.VER </h3>
+            <p>€70</p>
+            <p>⭐⭐⭐⭐</p>
+            <button onclick="addToCart('J.VER ', 70)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="45" data-size="S" data-color="green" data-season="winter">
+            <img src="images/shirt4.jpg" alt="J.VER">
+            <h3>J.VER</h3>
+            <p>€45</p>
+            <p>⭐⭐⭐⭐</p>
+            <button onclick="addToCart('J.VER', 45)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="110" data-size="M" data-color="gray" data-season="winter">
+            <img src="images/shirt5.jpg" alt="J.VER">
+            <h3>J.VER</h3>
+            <p>€110</p>
+            <p>⭐⭐⭐⭐</p>
+            <button onclick="addToCart('J.VER', 110)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="120" data-size="M" data-color="brown" data-season="autumn">
+            <img src="images/Korean1.jpg" alt="Shoes">
+            <h3>Korean</h3>
+            <p>€120</p>
+            <p>⭐⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Korean', 120)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="120" data-size="M" data-color="black" data-season="autumn">
+            <img src="images/Korean2.jpg" alt="Shoes">
+            <h3>Korean</h3>
+            <p>€120</p>
+            <p>⭐⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Korean', 50)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="70" data-size="L" data-color="brown" data-season="winter">
+            <img src="images/korean3.jpg" alt="Korean">
+            <h3>Couro Santorini</h3>
+            <p>€70</p>
+            <p>⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Korean', 70)">Add to Cart</button>
+        </div>
 
+        <!-- New Products -->
+        <div class="product-card" data-price="300" data-size="S" data-color="black" data-season="winter">
+            <img src="images/italian.jpg" alt="Shoes">
+            <h3>Italian Leather</h3>
+            <p>€300</p>
+            <p>⭐⭐⭐</p>
+            <button onclick="addToCart('Shoes', 300)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="300" data-size="M" data-color="black" data-season="autumn">
+            <img src="images/West.jpg" alt="Shoes">
+            <h3>West Louis</h3>
+            <p>€300</p>
+            <p>⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Shoes', 300)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="150" data-size="L" data-color="brown" data-season="autumn">
+            <img src="images/guci.jpg" alt="Shoes">
+            <h3>Gucci</h3>
+            <p>€150</p>
+            <p>⭐⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Shoes', 150)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="90" data-size="L" data-color="white" data-season="winter">
+            <img src="images/fm1.jpg" alt="Shoes">
+            <h3>Zara</h3>
+            <p>€90</p>
+            <p>⭐⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Shoes', 90)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="120" data-size="M" data-color="brown" data-season="autumn">
+            <img src="images/fm2.jpg" alt="Shoes">
+            <h3>Dolce Gabanna</h3>
+            <p>€120</p>
+            <p>⭐⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Shoes', 120)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="60" data-size="M" data-color="green" data-season="spring">
+            <img src="images/fm3.jpg" alt="Valentino">
+            <h3>Valentino</h3>
+            <p>€60</p>
+            <p>⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Valentino', 60)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="160" data-size="L" data-color="black" data-season="winter">
+            <img src="images/collec1.jpg" alt="Collections">
+            <h3>Collection YSL</h3>
+            <p>€160</p>
+            <p>⭐⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Collections', 80)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="250" data-size="S" data-color="white" data-season="winter">
+            <img src="images/collec2.jpg" alt="Collections">
+            <h3>Collection Chanel</h3>
+            <p>€250</p>
+            <p>⭐⭐⭐</p>
+            <button onclick="addToCart('Collections', 250)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="120" data-size="L" data-color="gold" data-season="autumn">
+            <img src="images/collec3.jpg" alt="Collections">
+            <h3>Collection Zara</h3>
+            <p>€120</p>
+            <p>⭐⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Collections', 120)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="70" data-size="M" data-color="green" data-season="autumn">
+            <img src="images/collec4.jpg" alt="Collections">
+            <h3>Collection Green</h3>
+            <p>€70</p>
+            <p>⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Collections', 70)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="260" data-size="S" data-color="brown" data-season="winter">
+            <img src="images/collec5.png" alt="Collections">
+            <h3>Collection PRADA</h3>
+            <p>€260</p>
+            <p>⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Collections', 260)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="210" data-size="M" data-color="gray" data-season="spring">
+            <img src="images/collec6.png" alt="Collections">
+            <h3>Collection Chanel</h3>
+            <p>€210</p>
+            <p>⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Collections', 210)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="300" data-size="L" data-color="green" data-season="autumn">
+            <img src="images/collec7.jpg" alt="Collections">
+            <h3>Collection Gucci</h3>
+            <p>€300</p>
+            <p>⭐⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Collections', 300)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="150" data-size="M" data-color="red" data-season="autumn">
+            <img src="images/collec8.jpg" alt="Collections">
+            <h3>Collections Gucci</h3>
+            <p>€150</p>
+            <p>⭐⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Collections', 150)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="380" data-size="L" data-color="green" data-season="winter">
+            <img src="images/collec9.jpg" alt="Collections">
+            <h3>Collection Chanel</h3>
+            <p>€380</p>
+            <p>⭐⭐⭐⭐</p>
+            <button onclick="addToCart('Collections', 380)">Add to Cart</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 INDUENDUM. All rights reserved.</p>
     </footer>
-    <script src="/js/products.js"></script>
+
+    <!-- Scripts -->
+    <script src="/js/products.js?v=2.0" defer></script>
 </body>
 </html>

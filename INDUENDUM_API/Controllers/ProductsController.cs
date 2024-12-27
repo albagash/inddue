@@ -147,7 +147,7 @@ public class ProductsController : ControllerBase
         }
     }
 
-    // DELETE: /api/products/{id}
+    
     [HttpDelete("{id}")]
     [Authorize(Roles = "Admin,Company")]
     public async Task<IActionResult> DeleteProduct(int id)

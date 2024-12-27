@@ -3,8 +3,8 @@ using INDUENDUM_API.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models; // Swagger për konfigurimin
-using Microsoft.Data.SqlClient; // Për përdorimin e procedurave të ruajtura
+using Microsoft.OpenApi.Models;
+using Microsoft.Data.SqlClient;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -63,13 +63,15 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-// Shto autorizimin
+// Shto autorizimin me politika specifike
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("AdminOnly", policy =>
         policy.RequireRole("Admin"));
     options.AddPolicy("UserOnly", policy =>
         policy.RequireRole("User"));
+    options.AddPolicy("CompanyOnly", policy =>
+        policy.RequireRole("Company"));
 });
 
 // Konfiguro Swagger për dokumentimin e API
@@ -80,7 +82,7 @@ builder.Services.AddSwaggerGen(options =>
     {
         Title = "INDUENDUM_API",
         Version = "v1",
-        Description = "API për menaxhimin e produkteve dhe koleksioneve"
+        Description = "API për menaxhimin e produkteve dhe koleksioneve."
     });
 
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -112,13 +114,46 @@ builder.Services.AddSwaggerGen(options =>
 // Konfiguro CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", policy =>
+    var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>();
+
+    options.AddPolicy("AllowSpecificOrigins", policy =>
     {
-        policy.AllowAnyOrigin()
-              .AllowAnyMethod()
-              .AllowAnyHeader();
+        if (allowedOrigins != null && allowedOrigins.Length > 0)
+        {
+            policy.WithOrigins(allowedOrigins)
+                  .AllowAnyMethod()
+                  .AllowAnyHeader();
+        }
+        else
+        {
+            policy.AllowAnyOrigin()
+                  .AllowAnyMethod()
+                  .AllowAnyHeader();
+        }
     });
 });
+builder.Services.AddCors(options =>
+{
+    var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>();
+
+    options.AddPolicy("AllowSpecificOrigins", policy =>
+    {
+        if (allowedOrigins != null && allowedOrigins.Length > 0)
+        {
+            policy.WithOrigins(allowedOrigins)
+                  .AllowAnyMethod()
+                  .AllowAnyHeader();
+        }
+        else
+        {
+            policy.AllowAnyOrigin()
+                  .AllowAnyMethod()
+                  .AllowAnyHeader();
+        }
+    });
+});
+
+
 
 var app = builder.Build();
 
@@ -144,20 +179,17 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors("AllowAll"); // Aktivizo CORS
-app.UseHttpsRedirection(); // Aktivizo HTTPS
-app.UseStaticFiles(); // Aktivizo shërbimin e skedarëve statikë
-app.UseDefaultFiles(); // Shfaq automatikisht index.html
+app.UseCors("AllowSpecificOrigins"); // Aktivizo politikën CORS
+app.UseHttpsRedirection();
+app.UseStaticFiles(); // Kjo duhet të jetë para UseRouting
+app.UseDefaultFiles(); // Opcionale, vendoset pas UseStaticFiles
+app.UseRouting();
 
 app.UseAuthentication(); // Aktivizo JWT Authentication
-app.UseRouting();
-app.UseAuthorization(); // Aktivizo autorizimin
+app.UseAuthorization();
 
 app.MapControllers(); // Mapo kontrollet
-
 app.MapFallbackToFile("index.html");
 
+app.Run();
 
-
-
-app.Run(); // Fillo aplikacionin

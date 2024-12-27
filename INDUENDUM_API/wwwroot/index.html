@@ -3,47 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our stylish collections at INDUENDUM.">
     <title>INDUENDUM - Sleek Vogue</title>
-    <script src="/js/scripts.js"></script>
-    <link rel="stylesheet" href="/css/styles.css">
-
-
-
+    <link rel="stylesheet" href="/css/styles.css?v=1.0">
+    <script src="/js/scripts.js" defer></script>
 </head>
+
+
 <body>
     <!-- Navbar -->
     <header class="navbar">
         <div class="container">
+
             <a href="/index.html" class="logo">
                 <span class="logo-highlight">INDUENDUM</span>
             </a>
+
             <nav>
                 <ul class="nav-links">
                     <li><a href="/index.html">Home</a></li>
                     <li><a href="/about.html">About Us</a></li>
-                    <li><a href="/portfolio.html">Portfolio</a></li>
                     <li><a href="/products.html">Products</a></li>
                     <li><a href="/services.html">Services</a></li>
                     <li><a href="/contact.html">Contact Us</a></li>
+                    <li><a href="/admin-dashboard.html" class="admin-link">Admin</a></li>
                 </ul>
             </nav>
+            <!-- Auth Links -->
             <div class="auth-links">
-                <a href="/login.html" class="btn login-btn">Kyçu</a>
-                <a href="/register.html" class="btn register-btn">Regjistrohu</a>
+                <button onclick="location.href='/login.html'" class="login-button">Kyçu</button>
+
+                <button onclick="location.href='/register.html'" class="btn register-btn">Regjistrohu</button>
+
             </div>
-            <button class="mobile-nav-toggle" aria-label="Toggle Navigation">☰</button>
+
+
         </div>
     </header>
 
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h2>Explore more</h2>
-            <p>Create your Collection now</p>
-            <button onclick="location.href='/products.html'" class="explore-products">Shiko Produktet</button>
+            <h1>Zbuloni Koleksionet Tona</h1>
+            <p>Krijoni koleksionin tuaj unik me produktet tona cilësore.</p>
+            <button onclick="location.href='products.html'" class="explore-products">Shiko Produktet</button>
+
+
         </div>
     </section>
+
+
 
     <!-- Seksion për Admin -->
     <div class="admin-section" style="display: none;">
@@ -69,247 +80,281 @@
         <button>Shiko Historikun e Blerjeve</button>
     </div>
 
-
-    <section class="highlights">
-        <h2>This Week's Highlights</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="/images/denim.jpg" alt="Product 1">
-                <p>Round-neck knitted sweater</p>
-                <span>$39.90</span>
+    <section class="style-inspiration">
+        <div class="inspiration-container">
+            <h2 class="section-title">Blog: Inspirim për Stil</h2>
+            <p class="section-description">Zbuloni kombinime dhe ide të reja stilimi për të përshtatur veshjet tuaja.</p>
+            <div class="inspiration-image" onclick="window.location.href='/collections.html'">
+                <img src="/images/hanger.jpg" alt="Inspirim për Stil">
             </div>
-            <div class="product-card">
-                <img src="/images/winn.jpg" alt="Product 2">
-                <p>Button knit cardigan</p>
-                <span>$39.90</span>
-            </div>
-            <div class="product-card">
-                <img src="/images/faux.jpg" alt="Product 3">
-                <p>Shearling denim jacket</p>
-                <span>$119.90</span>
-            </div>
-            <div class="product-card">
-                <img src="/images/green.jpg" alt="Product 4">
-                <p>Ultra-light quilted vest</p>
-                <span>$129.90</span>
+            <div class="inspiration-cta">
+                <button onclick="window.location.href='/collections.html'">Shiko Koleksionet</button>
             </div>
         </div>
     </section>
 
 
-
-
-    <!-- Seksioni për Dyqanet Partnere -->
+    <!-- Seksioni për Partnerët Tanë të Besuar -->
     <section class="partners">
         <h2>Our Trusted Partners</h2>
+        <p class="partners-description">Jemi krenar që bashkëpunojmë me disa nga emrat më të njohur dhe të besuar në industri.</p>
         <div class="partners-grid">
             <div class="partner-logo">
                 <img src="/images/Prmall.png" alt="Partner 1">
+                <p>Prishtina Mall</p>
             </div>
             <div class="partner-logo">
                 <img src="/images/albimall.png" alt="Partner 2">
+                <p>Albi Mall</p>
             </div>
             <div class="partner-logo">
                 <img src="/images/albanica.png" alt="Partner 3">
+                <p>Albanica Mall</p>
             </div>
             <div class="partner-logo">
                 <img src="/images/lorik.png" alt="Partner 4">
+                <p>Lorik Center</p>
             </div>
             <div class="partner-logo">
                 <img src="/images/hugo.jpeg" alt="Partner 5">
+                <p>Hugo Boss</p>
             </div>
         </div>
     </section>
 
-    <section id="products-section">
-        <h2>Produktet Tona</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="/images/product1.jpg" alt="Produkt 1">
-                <h3>Produkt 1</h3>
-                <p>Çmimi: $39.90</p>
-            </div>
-            <div class="product-card">
-                <img src="/images/product2.jpg" alt="Produkt 2">
-                <h3>Produkt 2</h3>
-                <p>Çmimi: $59.90</p>
-            </div>
-            <div class="product-card">
-                <img src="/images/product3.jpg" alt="Produkt 3">
-                <h3>Produkt 3</h3>
-                <p>Çmimi: $89.90</p>
-            </div>
-        </div>
-    </section>
 
 
     <section class="why-choose-us">
-        <h2>PSE TË NA ZGJIDHNI NE?</h2>
+        <h2 class="section-title">Pse të na Zgjidhni Ne</h2>
         <div class="features-container">
             <div class="feature-card">
-                <i class="fas fa-star"></i> <!-- Ikona për Materiale Cilësore -->
-                <h3>Materiale Cilësore</h3>
-                <p>Ne ofrojmë produkte të bëra nga materialet më cilësore, për t'ju ofruar komoditet maksimal.</p>
+                <img src="/images/value.jpg" alt="High Quality Icon" class="feature-icon">
+                <h3>Cilësi e Lartë</h3>
+                <p>Ne ofrojmë produkte të cilësisë më të lartë që plotësojnë standardet më të larta.</p>
             </div>
             <div class="feature-card">
-                <i class="fas fa-truck"></i> <!-- Ikona për Transport Falas -->
+                <img src="/images/free.jpg" alt="Free Shipping Icon" class="feature-icon">
                 <h3>Transport Falas</h3>
-                <p>Transport falas për të gjitha porositë mbi 50€. Porosit tani dhe përfito!</p>
+                <p>Gëzoni transport falas për të gjitha porositë mbi 50€ në të gjithë vendin.</p>
             </div>
             <div class="feature-card">
-                <i class="fas fa-undo-alt"></i> <!-- Ikona për Garanci Kthimi -->
-                <h3>Garanci Kthimi</h3>
-                <p>Ju ofrojmë kthim pa stres brenda 30 ditëve nëse nuk jeni të kënaqur.</p>
+                <img src="/images/service.jpg" alt="Customer Support Icon" class="feature-icon">
+                <h3>Shërbim për Klientët</h3>
+                <p>Ekipi ynë mbështetës është i gatshëm t'ju ndihmojë në çdo kohë.</p>
             </div>
             <div class="feature-card">
-                <i class="fas fa-headset"></i> <!-- Ikona për Shërbim ndaj Klientit -->
-                <h3>Shërbim ndaj Klientit</h3>
-                <p>Ekipi ynë i dedikuar është këtu për t'ju ndihmuar 24/7.</p>
+                <img src="/images/return.jpg" alt="Easy Returns Icon" class="feature-icon">
+                <h3>Kthime të Lehta</h3>
+                <p>Ktheni produktet tuaja brenda 30 ditëve nëse nuk jeni të kënaqur.</p>
             </div>
         </div>
     </section>
-
-
 
 
     <section class="faqs">
-        <h2>Pyetje të Shpeshta (FAQs)</h2>
+        <h2 class="section-title">Pyetje të Shpeshta (FAQs)</h2>
+        <p class="section-description">Gjeni përgjigjet për pyetjet tuaja më të zakonshme duke klikuar më poshtë.</p>
         <div class="faq-container">
             <div class="faq-item">
-                <button class="faq-question">Si mund të bëj një porosi?<span>+</span></button>
+                <div class="faq-question">
+                    <span class="faq-icon">👟</span>
+                    <span class="faq-text">Si mund të bëj një porosi?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
                 <div class="faq-answer">
-                    <p>Për të bërë një porosi, thjesht zgjidhni produktin tuaj të preferuar, shtypni 'Shto në Shportë' dhe ndiqni udhëzimet për pagesë.</p>
+                    Për të bërë një porosi, thjesht zgjidhni produktin tuaj të preferuar, shtypni 'Shto në Shportë' dhe ndiqni udhëzimet për pagesë.
                 </div>
             </div>
             <div class="faq-item">
-                <button class="faq-question">A ofroni kthime?<span>+</span></button>
+                <div class="faq-question">
+                    <span class="faq-icon">🎁</span>
+                    <span class="faq-text">A ofroni kthime?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
                 <div class="faq-answer">
-                    <p>Po, ofrojmë kthime brenda 30 ditëve pas blerjes. Ju lutemi lexoni politikën tonë të kthimeve për më shumë detaje.</p>
+                    Po, ofrojmë kthime brenda 30 ditëve pas blerjes. Ju lutemi lexoni politikën tonë të kthimeve për më shumë detaje.
                 </div>
             </div>
             <div class="faq-item">
-                <button class="faq-question">Si mund të kontaktoj me ju?<span>+</span></button>
+                <div class="faq-question">
+                    <span class="faq-icon">📞</span>
+                    <span class="faq-text">Si mund të kontaktoj me ju?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
                 <div class="faq-answer">
-                    <p>Mund të na kontaktoni nëpërmjet email-it tonë support@example.com ose duke telefonuar në numrin +383-44-123-456.</p>
+                    Mund të na kontaktoni nëpërmjet email-it tonë support@example.com ose duke telefonuar në numrin +383-44-123-456.
                 </div>
             </div>
         </div>
     </section>
 
-
     <section class="special-offers">
         <h2>Ofertat Speciale</h2>
-        <div class="offers-container">
-            <div class="offer-banner" onclick="viewOffersPage()">
-                <img src="/images/special-offers-banner.jpg" alt="Ofertat Speciale">
-                <div class="offer-overlay">
-                    <h3>Shiko Ofertat Tona Ekskluzive</h3>
-                </div>
+        <p>Shfleto ofertën më të mirë të javës dhe përfito zbritje ekskluzive për koleksionet tona!</p>
+        <div class="offer-image" onclick="redirectToProducts()">
+            <img src="/images/fas.jpg" alt="Oferta Speciale">
+        </div>
+        <div class="offer-cta">
+            <button onclick="redirectToProducts()">Shiko Ofertat</button>
+        </div>
+    </section>
+
+    <script>
+        function redirectToProducts() {
+            window.location.href = '/products.html';
+        }
+    </script>
+
+
+    <section class="discover-style">
+        <h2 class="section-title">Zbuloni Stilin Tuaj</h2>
+        <p class="section-description">
+            Eksploroni koleksionet tona bazuar në stilin tuaj të preferuar dhe zbuloni më të mirën që ne ofrojmë.
+        </p>
+        <div class="style-categories">
+            <div class="style-category">
+                <img src="/images/casual.jpg" alt="Casual Style">
+                <h3>Casual</h3>
+                <button onclick="redirectToShop('Casual')">Shiko Produktet</button>
+            </div>
+            <div class="style-category">
+                <img src="/images/elegant.jpg" alt="Elegant Style">
+                <h3>Elegant</h3>
+                <button onclick="redirectToShop('Elegant')">Shiko Produktet</button>
+            </div>
+            <div class="style-category">
+                <img src="/images/sport.jpg" alt="Sportive Style">
+                <h3>Sportive</h3>
+                <button onclick="redirectToShop('Sportive')">Shiko Produktet</button>
+            </div>
+            <div class="style-category">
+                <img src="/images/classic.jpg" alt="Classic Style">
+                <h3>Klasike</h3>
+                <button onclick="redirectToShop('Classic')">Shiko Produktet</button>
             </div>
         </div>
     </section>
 
     <script>
-        function viewOffersPage() {
-            // Ridrejto te faqja "shop.html" për të parë ofertat
-            window.location.href = "/shop.html";
+        function redirectToShop(style) {
+            window.location.href = `/products.html?style=${encodeURIComponent(style)}`;
         }
     </script>
 
+    <section class="virtual-stylist-link">
+        <h2>Stilisti Virtual</h2>
+        <p>Kombinoni artikujt tuaj dhe krijoni stilin që ju përfaqëson!</p>
+        <a href="stylist.html" class="btn-virtual-stylist">Krijo Stilin Tënd</a>
 
-
-
-
-
-    <section class="client-stories">
-        <h2 class="section-title">Historitë e Klientëve</h2>
-        <div class="stories-container">
-            <div class="story">
-                <img src="/images/client1.jpg" alt="Klienti 1" class="client-photo">
-                <blockquote>
-                    "Shërbimet dhe cilësia e produkteve janë të jashtëzakonshme! Unë e rekomandoj platformën për këdo që kërkon elegancë dhe cilësi."
-                </blockquote>
-                <p class="client-name">- Arlinda Hoxha</p>
-            </div>
-            <div class="story">
-                <img src="/images/client2.jpg" alt="Klienti 2" class="client-photo">
-                <blockquote>
-                    "Kostumet e blera nga kjo platformë janë perfekte për eventet e mia të rëndësishme. Jam shumë e kënaqur!"
-                </blockquote>
-                <p class="client-name">- Blerta Krasniqi</p>
-            </div>
-            <div class="story">
-                <img src="/images/client3.jpg" alt="Klienti 3" class="client-photo">
-                <blockquote>
-                    "Transport i shpejtë dhe mbështetje ndaj klientit që të bën të ndihesh i veçantë. Do të blej sërish!"
-                </blockquote>
-                <p class="client-name">- Besnik Gashi</p>
-            </div>
-        </div>
     </section>
-    <section class="discover-style">
-        <h2 class="section-title">Zbuloni Stilin Tuaj</h2>
-        <p class="section-description">Eksploroni koleksionet tona bazuar në stilin tuaj të preferuar dhe zbuloni më të mirën që ne ofrojmë.</p>
-        <div class="style-categories">
-            <div class="style-category">
-                <img src="/images/casual.jpg" alt="Casual Style">
-                <h3>Casual</h3>
-                <button class="explore-button">Eksploro</button>
-            </div>
-            <div class="style-category">
-                <img src="/images/elegant.jpg" alt="Elegant Style">
-                <h3>Elegant</h3>
-                <button class="explore-button">Eksploro</button>
-            </div>
-            <div class="style-category">
-                <img src="/images/sportive.jpg" alt="Sportive Style">
-                <h3>Sportive</h3>
-                <button class="explore-button">Eksploro</button>
-            </div>
-            <div class="style-category">
-                <img src="/images/classic.jpg" alt="Classic Style">
-                <h3>Klasike</h3>
-                <button class="explore-button">Eksploro</button>
-            </div>
-        </div>
-    </section>
+
+    <style>
+        .virtual-stylist-link {
+            background: linear-gradient(135deg, #6A0572, #2C1E50);
+            padding: 50px 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: #F1C40F;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    </style>
+
+
     <section class="happy-clients">
         <h2 class="section-title">Klientët Tanë të Kënaqur</h2>
-        <p class="section-description">Lexoni se çfarë thonë klientët tanë për përvojat e tyre.</p>
+        <p class="section-description">Eksploroni eksperiencat e jashtëzakonshme të klientëve tanë.</p>
         <div class="client-feedback-container">
             <div class="client-feedback">
-                <img src="/images/client1.jpg" alt="Client 1">
-                <blockquote>"Shërbimi ishte i jashtëzakonshëm! Produktet janë të cilësisë më të lartë."</blockquote>
-                <p>- Arlinda M.</p>
-                <div class="client-rating">
-                    ⭐⭐⭐⭐⭐
+                <div class="client-avatar">
+                    <img src="/images/client1.jpg" alt="Arbena G.">
                 </div>
+                <blockquote>
+                    <span class="quote-symbol">“</span>
+                    Shërbimi ishte i jashtëzakonshëm! Produktet janë të cilësisë më të lartë.
+                </blockquote>
+                <p class="client-name">- Arbena G.</p>
+                <div class="client-rating">⭐⭐⭐⭐⭐</div>
             </div>
             <div class="client-feedback">
-                <img src="/images/client2.jpg" alt="Client 2">
-                <blockquote>"Përvoja ime me INDUENDUM ka qenë fantastike. Do të rikthehem përsëri."</blockquote>
-                <p>- Blerim K.</p>
-                <div class="client-rating">
-                    ⭐⭐⭐⭐⭐
+                <div class="client-avatar">
+                    <img src="/images/busne.jpg" alt="Diellëza G.">
                 </div>
+                <blockquote>
+                    <span class="quote-symbol">“</span>
+                    Përvoja ime me INDUENDUM ka qenë fantastike. Do të rikthehem përsëri.
+                </blockquote>
+                <p class="client-name">- Diellëza G.</p>
+                <div class="client-rating">⭐⭐⭐⭐⭐</div>
             </div>
             <div class="client-feedback">
-                <img src="/images/client3.jpg" alt="Client 3">
-                <blockquote>"Produktet janë të bukura dhe shumë praktike. E rekomandoj shumë!"</blockquote>
-                <p>- Era D.</p>
-                <div class="client-rating">
-                    ⭐⭐⭐⭐⭐
+                <div class="client-avatar">
+                    <img src="/images/client3.jpg" alt="Ardit G.">
                 </div>
+                <blockquote>
+                    <span class="quote-symbol">“</span>
+                    Produktet janë të bukura dhe shumë praktike. E rekomandoj shumë!
+                </blockquote>
+                <p class="client-name">- Ardit G.</p>
+                <div class="client-rating">⭐⭐⭐⭐⭐</div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
+
+    <footer class="site-footer">
         <div class="footer-container">
-            <p>&copy; 2024 INDUENDUM. All rights reserved.</p>
+
+            <div class="footer-about">
+                <h3>INDUENDUM</h3>
+                <p>Zbuloni modën dhe stilin me koleksionet tona ekskluzive. Cilësi dhe shërbim që nuk dalin nga moda.</p>
+            </div>
+
+
+            <div class="footer-links">
+                <h4>Navigo</h4>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/products.html">Products</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-categories">
+                <h4>Kategoritë</h4>
+                <ul>
+                    <li><a href="#">Casual</a></li>
+                    <li><a href="#">Elegant</a></li>
+                    <li><a href="#">Sportive</a></li>
+                    <li><a href="#">Classic</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-contact">
+                <h4>Na Kontaktoni</h4>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +383-44-123-456</li>
+                    <li><i class="fas fa-envelope"></i> support@example.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Prishtinë, Kosovë</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 INDUENDUM. Të gjitha të drejtat janë të rezervuara.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
         </div>
     </footer>
-    <script src="/js/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - INDUENDUM</title>
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="../js/admin-dashboard.js" defer></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <h1>Admin Dashboard</h1>
+            <button id="logout-btn">Dil</button>
+        </header>
+
+        <!-- Message Box -->
+        <div class="message-box"></div>
+
+        <!-- Manage Users -->
+        <section class="manage-section">
+            <h2 class="section-title">Menaxhimi i Përdoruesve</h2>
+            <form id="add-user-form">
+                <div class="form-group">
+                    <label for="user-fullname">Emri:</label>
+                    <input type="text" id="user-fullname" placeholder="Shkruani emrin" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-email">Email:</label>
+                    <input type="email" id="user-email" placeholder="Shkruani email-in" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-role">Roli:</label>
+                    <select id="user-role" required>
+                        <option value="Admin">Admin</option>
+                        <option value="Company">Kompani</option>
+                        <option value="User">Përdorues</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Shto Përdorues</button>
+            </form>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>EMRI</th>
+                        <th>EMAIL</th>
+                        <th>ROLI</th>
+                        <th>VEPRIME</th>
+                    </tr>
+                </thead>
+                <tbody id="users-table-body">
+                    <!-- Të dhënat ngarkohen këtu përmes admin-dashboard.js -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Manage Products -->
+        <section class="manage-section">
+            <h2 class="section-title">Menaxhimi i Produkteve</h2>
+            <form id="add-product-form">
+                <div class="form-group">
+                    <label for="product-name">Emri i Produktit:</label>
+                    <input type="text" id="product-name" placeholder="Shkruani emrin e produktit" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-description">Përshkrimi:</label>
+                    <input type="text" id="product-description" placeholder="Shkruani përshkrimin" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-price">Çmimi:</label>
+                    <input type="number" id="product-price" placeholder="Shkruani çmimin" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-category">Kategoria:</label>
+                    <input type="text" id="product-category" placeholder="Shkruani kategorinë" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-image-url">URL e Imazhit:</label>
+                    <input type="url" id="product-image-url" placeholder="Shkruani URL-në e imazhit" required>
+                </div>
+                <button type="submit" class="submit-btn">Shto Produkt</button>
+            </form>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>EMRI</th>
+                        <th>ÇMIMI</th>
+                        <th>KATEGORIA</th>
+                        <th>VEPRIME</th>
+                    </tr>
+                </thead>
+                <tbody id="products-table-body">
+                    <!-- Të dhënat ngarkohen këtu përmes admin-dashboard.js -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+</body>
+</html>

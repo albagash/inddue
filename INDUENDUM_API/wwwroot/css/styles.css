@@ -1,161 +1,247 @@
-﻿/* Reset */
-body, h1, h2, p, ul, li {
+﻿/* General Reset */
+body {
     margin: 0;
     padding: 0;
-    list-style: none;
     font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b); /* Deep Indigo Blue */
+    color: #e0e0e0; /* Tekst i qartë për sfondin e errët */
+    line-height: 1.6;
 }
 
-/* Navbar Styles */
+/* Stilizimi i Seksioneve */
+section {
+    padding: 60px 20px;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.05); /* Transparencë për seksionet */
+    backdrop-filter: blur(10px); /* Efekti i mjegullimit për sfond */
+}
+
+    /* Titujt */
+    section h2 {
+        font-size: 2.5rem;
+        color: #facc15; /* Ngjyrë ari për tituj */
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    /* Përshkrimi */
+    section p {
+        font-size: 1.2rem;
+        color: #d1d5db; /* Gri e butë për përshkrimin */
+        max-width: 700px;
+        margin: 0 auto;
+        margin-bottom: 40px;
+    }
+
+/* Butonat */
+button {
+    padding: 15px 30px;
+    background-color: #facc15; /* Ngjyrë ari për butonat */
+    color: #1c1c1e; /* Tekst me kontrast */
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+    button:hover {
+        background-color: #e1b307; /* Ngjyrë më e errët gjatë hover */
+        transform: scale(1.05);
+    }
+
+/* Imagjinat për Seksionet */
+img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    img:hover {
+        transform: scale(1.03);
+        box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.5);
+    }
+
+
+
+/* Navbar Styling */
 .navbar {
-    background: linear-gradient(90deg, #222, #444); /* Gradient elegant */
-    padding: 15px 20px;
+    background-color: #1C1C1E; /* Ngjyra e zezë për sfondin */
+    color: #fff; /* Ngjyra e bardhë për tekstin */
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.logo {
-    font-size: 2rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: #f4d03f; /* E verdhë ari për luks */
-    text-transform: uppercase;
-    transition: transform 0.3s ease;
-}
-
-    .logo:hover {
-        transform: scale(1.1);
-    }
-
-.nav-links {
+.navbar .container {
     display: flex;
-    gap: 20px;
-    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
-    .nav-links a {
-        text-decoration: none;
-        color: #f5f5f5;
-        font-size: 1rem;
-        font-weight: bold;
-        padding: 8px 15px;
-        border-radius: 5px;
-        transition: all 0.3s;
+/* Logo Styling */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-decoration: none;
+    flex: 1; /* Bën që logo të mbajë hapësirën e saj */
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    flex: 2; /* Pozicionon linket në mes */
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+    .nav-links a:hover {
+        color: #FFFFFF; /* Efekti hover */
     }
 
-        .nav-links a:hover {
-            background-color: #555;
-            color: #f39c12; /* Ngjyrë e ngrohtë */
-            transform: translateY(-2px);
-        }
-
+/* Auth Links Styling */
 .auth-links {
     display: flex;
-    gap: 10px;
+    gap: 1rem;
+    flex: 1; /* Pozicionon butonat në të djathtë */
+    justify-content: flex-end;
 }
 
     .auth-links .btn {
-        padding: 8px 15px;
-        text-decoration: none;
-        color: white;
-        border: 2px solid #f39c12;
+        background: #FFD700;
+        color: #000;
+        border: none;
+        padding: 0.5rem 1rem;
         border-radius: 5px;
-        background-color: transparent;
+        text-decoration: none;
         font-weight: bold;
-        transition: all 0.3s ease;
+        transition: background 0.3s ease, transform 0.2s ease;
     }
 
         .auth-links .btn:hover {
-            background-color: #f39c12;
-            color: black;
-            box-shadow: 0px 4px 8px rgba(243, 156, 18, 0.5);
+            background: #FFD700;
+            transform: scale(1.05);
         }
 
-.mobile-nav-toggle {
-    display: none;
-    font-size: 1.5rem;
-    color: white;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
-        display: none;
-        flex-direction: column;
-        background: #222;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        padding: 10px 0;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        display: none; /* Fshih linket në pajisjet mobile */
     }
 
-        .nav-links.active {
-            display: flex;
-        }
+    .auth-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 
     .mobile-nav-toggle {
         display: block;
     }
-
-    .auth-links {
-        display: none;
-    }
 }
+
 
 
 /* Hero Section */
 .hero {
-    background-color: #283593;
-    color: white;
+    position: relative;
+    background: url('/images/baack.jpg') no-repeat center center/cover; /* Vendosni imazhin tuaj */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff; /* Tekst i bardhë për kontrast më të mirë */
     text-align: center;
-    padding: 60px 20px;
-    border-radius: 8px;
+    overflow: hidden;
 }
 
-.hero-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.7); /* Blu e errët gjysmë transparente */
+    z-index: 1;
 }
 
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
 }
 
-.hero-content button {
-    padding: 10px 20px;
-    background-color: #ff6f00;
-    color: white;
+    .hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+        color: #f5f5f5; /* E bardhë e butë për tekstin kryesor */
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        font-family: 'Arial', sans-serif;
+        color: #d1d5db; /* Ngjyrë gri për tekstin dytësor */
+    }
+
+.explore-products {
+    background-color: #FACC15; /* E verdhë e ndritshme për butonin */
+    color: #111827; /* Tekst i errët për kontrast */
     border: none;
+    padding: 15px 30px;
     border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-    .hero-content button:hover {
-        background-color: #ff8f00;
+    .explore-products:hover {
+        background-color: #fef3c7; /* E verdhë më e butë kur kaloni miun mbi butonin */
+        transform: scale(1.05);
     }
 
 /* Seksioni i Produkteve */
 #products-section {
     padding: 60px 20px;
-    background-color: #f4f4f4;
+    background-color: #1E293B; /* Blu e errët për sfondin */
     text-align: center;
 }
 
     #products-section h2 {
         font-size: 2.5rem;
         margin-bottom: 20px;
-        color: #333;
+        color: #FACC15; /* E verdhë për tekstin e seksionit */
     }
 
 .product-grid {
@@ -167,8 +253,8 @@ body, h1, h2, p, ul, li {
 }
 
 .product-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: #FDE68A; /* Ngjyrë e lehtë bezhë për kartat */
+    border: 1px solid #E5E7EB; /* Kufij të butë gri */
     border-radius: 8px;
     padding: 15px;
     text-align: center;
@@ -191,13 +277,14 @@ body, h1, h2, p, ul, li {
     .product-card h3 {
         font-size: 1.2rem;
         margin-bottom: 10px;
-        color: #333;
+        color: #374151; /* Tekst i errët për titullin */
     }
 
     .product-card p {
         font-size: 1rem;
-        color: #666;
+        color: #6B7280; /* Tekst gri për detajet */
     }
+
 /* Modal General Styles */
 .modal {
     display: none;
@@ -207,274 +294,379 @@ body, h1, h2, p, ul, li {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(15, 23, 42, 0.8); /* Blu e errët gjysmë transparente për sfondin */
     overflow: auto;
 }
 
 .modal-content {
-    background-color: #fff;
+    background-color: #1E293B; /* Blu e errët për sfondin e modal-it */
     margin: 10% auto;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     width: 30%;
     text-align: center;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Hije për modal-in */
 }
 
     .modal-content input, .modal-content button {
         width: 80%;
         margin: 10px 0;
-        padding: 10px;
+        padding: 12px;
         border-radius: 5px;
-        border: 1px solid #ddd;
+        border: 1px solid #E5E7EB; /* Kufij të butë gri për input-et dhe butonat */
+        font-size: 1rem;
+        color: #374151; /* Tekst i errët për input-et */
     }
 
     .modal-content button {
-        background-color: #283593;
-        color: white;
+        background-color: #FACC15; /* E verdhë e ndritshme për butonin */
+        color: #111827; /* Tekst i errët për kontrast të mirë */
         border: none;
         cursor: pointer;
-        transition: background-color 0.3s;
+        transition: background-color 0.3s, transform 0.2s;
+        font-weight: bold;
     }
 
         .modal-content button:hover {
-            background-color: #5f5fc4;
+            background-color: #FEF3C7; /* E verdhë më e butë kur kaloni miun mbi butonin */
+            transform: scale(1.05);
         }
 
 .close {
-    color: #aaa;
+    color: #FACC15; /* E verdhë për butonin e mbylljes */
     font-size: 28px;
     font-weight: bold;
     float: right;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
 
     .close:hover, .close:focus {
-        color: black;
-    }
-
-/* Navbar Buttons */
-.navbar ul li button {
-    background: none;
-    color: white;
-    border: 1px solid white;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-    .navbar ul li button:hover {
-        background-color: #444;
+        color: #FDE68A; /* E verdhë më e butë kur kaloni miun mbi të */
     }
 
 
-
-/* Highlights Section */
-.highlights {
-    padding: 40px 20px;
+/* Seksioni: Blog: Inspirim për Stil */
+.style-inspiration {
+    padding: 60px 20px;
+    background-color: #1C1C1E; /* Sfond i errët për elegancë */
     text-align: center;
+    color: #EAECEE; /* Tekst i qartë për sfondin e errët */
+    border-radius: 15px;
+    margin-bottom: 50px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-    .highlights h2 {
+    .style-inspiration h2 {
+        font-size: 2.5rem;
+        color: #FACC15; /* Ngjyrë e verdhë për titullin */
         margin-bottom: 20px;
-        color: #444;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
     }
 
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    justify-items: center;
-    margin-top: 30px;
+    .style-inspiration p {
+        font-size: 1.2rem;
+        color: #B3B6B7; /* Ngjyrë gri për elegancë */
+        margin-bottom: 40px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+.blog-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
-.product-card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
+.blog-card {
+    background-color: #FFFFFF; /* E bardhë për kontrast */
+    padding: 20px;
+    border-radius: 12px;
     text-align: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-width: 250px;
 }
 
-    .product-card:hover {
+    .blog-card:hover {
         transform: scale(1.05);
         box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     }
 
-    .product-card img {
+    .blog-card img {
         width: 100%;
-        border-radius: 8px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+
+    .blog-card h3 {
+        font-size: 1.5rem;
+        color: #1C1C1E; /* Tekst blu i errët */
         margin-bottom: 10px;
     }
 
-    .product-card h3 {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
-        color: #333;
-    }
-
-    .product-card p {
+    .blog-card p {
         font-size: 1rem;
-        color: #666;
+        color: #4B5563; /* Gri përshkrues */
+        margin-bottom: 20px;
+        line-height: 1.5;
     }
 
-/* Partners Section */
+    .blog-card button {
+        padding: 10px 20px;
+        background-color: #FACC15;
+        color: #1C1C1E;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+        .blog-card button:hover {
+            background-color: #E4B718;
+            transform: scale(1.05);
+        }
+
+
+/* Seksioni: Partnerët Tanë të Besuar */
 .partners {
-    padding: 40px 20px;
-    background-color: #f9f9f9;
+    padding: 60px 20px;
+    background-color: #1C1C1E; /* Ngjyrë e zezë elegante për sfondin */
     text-align: center;
+    color: #FACC15; /* E verdhë për tekstin */
+    border-top: 5px solid #FACC15; /* Kufiri i sipërm për ndarje */
+    border-radius: 10px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
 }
 
     .partners h2 {
-        margin-bottom: 20px;
-        color: #444;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
     }
+
+.partners-description {
+    font-size: 1.2rem;
+    color: #B3B6B7; /* Gri e butë për përshkrimin */
+    margin-bottom: 40px;
+}
 
 .partners-grid {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    align-items: center;
     flex-wrap: wrap;
+    gap: 30px;
 }
 
-.partner-logo img {
-    max-width: 120px;
-    transition: transform 0.3s;
+.partner-logo {
+    background-color: #FFFFFF; /* Sfond i bardhë për logot */
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Hije për efekt 3D */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    max-width: 180px;
 }
 
-    .partner-logo img:hover {
-        transform: scale(1.1);
+    .partner-logo:hover {
+        transform: scale(1.1); /* Efekti i rritjes kur miu kalon mbi */
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3); /* Hije më të theksuara */
     }
+
+    .partner-logo img {
+        max-width: 120px;
+        height: auto;
+        margin-bottom: 10px;
+        transition: transform 0.3s ease-in-out;
+        border-radius: 10px; /* Këndet e rrumbullakosura për pamje elegante */
+    }
+
+        .partner-logo img:hover {
+            transform: scale(1.15); /* Efekt i lehtë rritjeje në logo */
+        }
+
+    .partner-logo p {
+        font-size: 1rem;
+        color: #1C1C1E; /* Ngjyrë e zezë e errët për tekstin e emrave */
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+
+
 /* Seksioni: Pse të na Zgjidhni Ne */
 .why-choose-us {
     padding: 60px 20px;
-    background-color: #ffe0b3;
+    background: linear-gradient(135deg, #451952, #1C1C1E); /* Ngjyrë lejla magjike për sfond */
     text-align: center;
     border-radius: 10px;
     margin-bottom: 40px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    color: #EAECEE;
 }
 
-    .why-choose-us h2 {
-        font-size: 2.5rem;
-        color: #d35400;
-        margin-bottom: 20px;
+    .why-choose-us .section-title {
+        font-size: 2.8rem;
+        color: #FACC15; /* Ngjyrë e verdhë e theksuar për titullin */
+        margin-bottom: 30px;
         text-transform: uppercase;
+        letter-spacing: 2px;
     }
 
 .features-container {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
 }
 
 .feature-card {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #FFFFFF; /* Sfond i bardhë për kontrast */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
     text-align: center;
-    max-width: 250px;
-    transition: transform 0.3s ease;
+    max-width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
     .feature-card:hover {
-        transform: scale(1.05);
+        transform: scale(1.05); /* Efekt rritje në hover */
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Hijet e theksuara */
     }
 
-    .feature-card i {
-        font-size: 2rem;
-        color: #d35400;
-        margin-bottom: 10px;
-    }
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    border-radius: 50%; /* Ikona e rrumbullakosur */
+    border: 4px solid #FACC15; /* Kufiri i verdhë për harmoni */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Hijet për theksim */
+}
 
-    .feature-card h3 {
-        font-size: 1.5rem;
-        color: #333;
-        margin-bottom: 10px;
-    }
+.feature-card h3 {
+    font-size: 1.8rem;
+    color: #1C1C1E; /* Tekst blu për kontrast */
+    margin-bottom: 15px;
+}
 
-    .feature-card p {
-        font-size: 1rem;
-        color: #666;
-        line-height: 1.6;
-    }
+.feature-card p {
+    font-size: 1.1rem;
+    color: #4B5563; /* Tekst gri për qartësi */
+    line-height: 1.6;
+    font-weight: 500;
+}
+
 
 
 
 /* Seksioni: Pyetje të Shpeshta (FAQs) */
 .faqs {
     padding: 60px 20px;
-    background-color: #f9f9f9;
+    background-color: #1C1C1E; /* Ngjyrë blu e errët */
+    color: #EAECEE;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 12px;
     margin-bottom: 40px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-    .faqs h2 {
+    .faqs .section-title {
         font-size: 2.5rem;
-        color: #333;
-        margin-bottom: 30px;
+        color: #FACC15; /* Ngjyrë e verdhë për titullin */
+        margin-bottom: 20px;
         text-transform: uppercase;
+        letter-spacing: 1.5px;
     }
 
+    .faqs .section-description {
+        font-size: 1.2rem;
+        color: #D1D5DB;
+        margin-bottom: 40px;
+    }
+
+/* Struktura e Pyetjeve */
 .faq-container {
     max-width: 800px;
     margin: 0 auto;
-}
-
-.faq-item {
-    margin-bottom: 20px;
-}
-
-.faq-question {
-    background-color: #43a047;
-    color: white;
-    font-size: 1.2rem;
-    padding: 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
     text-align: left;
 }
 
-    .faq-question:hover {
-        background-color: #66bb6a;
+.faq-item {
+    background-color: #1C1C1E; /* Ngjyrë gri e errët për pyetjet */
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+    .faq-item:hover {
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
     }
 
+.faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #EAECEE;
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.faq-toggle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FACC15; /* Ngjyrë e verdhë për simbolin */
+    transition: transform 0.3s ease;
+}
+
+/* Përgjigjja e Pyetjeve */
 .faq-answer {
-    background-color: #fff;
-    color: #555;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-top: 10px;
-    display: none;
+    display: none; /* Fshehur si parazgjedhje */
+    background-color: #3A3D40; /* Ngjyrë gri e errët për sfondin e përgjigjes */
+    color: #D1D5DB;
+    padding: 15px 20px;
+    font-size: 1rem;
     line-height: 1.6;
 }
 
-.faq-item.active .faq-answer {
-    display: block;
-}
+    .faq-answer.open {
+        display: block; /* Shfaqet kur hapet */
+    }
+
 
 /* Seksioni: Historitë e Klientëve */
 .client-stories {
     padding: 60px 20px;
-    background-color: #fef9e7;
+    background-color: #2E2A47; /* Blu e errët elegante për sfondin */
     text-align: center;
-    border-radius: 10px;
+    border-radius: 12px;
     margin-bottom: 40px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Hijet për efekt thellësie */
 }
 
     .client-stories h2 {
         font-size: 2.5rem;
-        color: #d35400;
-        margin-bottom: 20px;
+        color: #FACC15; /* Ngjyra e verdhë elegante për titullin */
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
     }
 
 .stories-container {
@@ -486,34 +678,41 @@ body, h1, h2, p, ul, li {
 
 .story {
     max-width: 300px;
-    background-color: #fff;
+    background-color: #FFFFFF; /* E bardhë për kontrast */
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Për të menaxhuar përmbajtjen */
 }
 
     .story:hover {
         transform: scale(1.05);
-        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Hijet më të theksuara gjatë hover-it */
     }
 
     .story img {
-        width: 100%;
-        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%; /* Fotografi rrethore për një pamje miqësore */
         margin-bottom: 15px;
+        border: 3px solid #FACC15; /* Kufiri i verdhë rreth fotografisë */
+        object-fit: cover; /* Për të mbajtur proporcione të sakta */
     }
 
     .story blockquote {
         font-style: italic;
-        color: #555;
+        color: #EEE; /* Ngjyrë e lehtë për kontrast në sfond të errët */
         margin-bottom: 15px;
+        line-height: 1.6;
     }
 
     .story .client-name {
         font-weight: bold;
-        color: #333;
+        color: #FACC15; /* Ngjyra e verdhë për të nxjerrë në pah emrin */
+        margin-top: 10px;
+        font-size: 1.2rem;
     }
 
 
@@ -521,63 +720,81 @@ body, h1, h2, p, ul, li {
 /* Seksioni: Zbuloni Stilin Tuaj */
 .discover-style {
     padding: 60px 20px;
-    background-color: #e8f5e9;
+    background-color: #1C1C1E;
+    color: white;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 12px;
     margin-bottom: 40px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-    .discover-style h2 {
+    .discover-style .section-title {
         font-size: 2.5rem;
-        color: #2e7d32;
+        color: #FACC15;
         margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .discover-style .section-description {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        color: #D1D5DB;
     }
 
 .style-categories {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 .style-category {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #D1D5DB;
+    border-radius: 12px;
     padding: 20px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    cursor: pointer;
 }
 
     .style-category:hover {
         transform: scale(1.05);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
     }
 
     .style-category img {
         max-width: 100%;
-        border-radius: 10px;
+        border-radius: 12px;
         margin-bottom: 15px;
+        height: 200px;
+        object-fit: cover;
     }
 
     .style-category h3 {
         font-size: 1.5rem;
-        color: #2e7d32;
+        color: #1E293B;
         margin-bottom: 15px;
     }
 
+    /* Butonat e Verdhe */
     .style-category button {
         padding: 10px 20px;
-        background-color: #43a047;
-        color: white;
+        background-color: #FACC15; /* E verdhë për butonat */
+        color: #1C1C1E; /* Tekst i errët për kontrast */
         border: none;
-        border-radius: 5px;
+        border-radius: 6px;
         cursor: pointer;
-        transition: background-color 0.3s;
+        transition: background-color 0.3s, transform 0.2s;
+        font-weight: bold;
     }
 
         .style-category button:hover {
-            background-color: #66bb6a;
+            background-color: #FFD700; /* E verdhë më e ndezur për efekt hover */
+            transform: scale(1.05);
         }
 
 
@@ -585,26 +802,32 @@ body, h1, h2, p, ul, li {
 /* Seksioni: Klientët Tanë të Kënaqur */
 .happy-clients {
     padding: 60px 20px;
-    background-color: #fff3e0; /* Ngjyrë e butë për sfondin */
+    background-color: #1C1C1E; /* Blu e errët për sfond profesional */
     text-align: center;
-    border-radius: 10px;
-    margin-bottom: 40px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    margin-bottom: 50px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    color: #EAECEE; /* Tekst i qartë për sfondin */
 }
 
     .happy-clients h2 {
         font-size: 2.5rem;
-        color: #d35400;
+        color: #FACC15; /* E verdhë harmonizuese */
         margin-bottom: 20px;
         text-transform: uppercase;
+        letter-spacing: 1.5px;
     }
 
     .happy-clients p {
         font-size: 1.2rem;
-        color: #666;
+        color: #D1D5DB; /* Gri e butë për përshkrimin */
         margin-bottom: 30px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
+/* Kontejneri i feedback-ut */
 .client-feedback-container {
     display: flex;
     flex-wrap: wrap;
@@ -612,60 +835,78 @@ body, h1, h2, p, ul, li {
     gap: 30px;
 }
 
+/* Karta e feedback-ut */
 .client-feedback {
-    max-width: 300px;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 280px; /* Madhësi e standardizuar për të gjitha kartat */
+    background-color: #1E293B;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
 }
 
     .client-feedback:hover {
         transform: scale(1.05);
-        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.3);
     }
 
-    .client-feedback img {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%; /* E bën foton rrethore */
-        margin-bottom: 15px;
-        border: 3px solid #d35400;
+/* Fotoja e klientit */
+.client-avatar {
+    width: 100px; /* Madhësia standarde për avatarët */
+    height: 100px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #FACC15; /* Kufiri harmonizues */
+}
+
+    .client-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Sigurohet që fotot të jenë uniforme */
+        border-radius: 50%; /* Ruajtja e formës rrethore */
     }
 
-    .client-feedback blockquote {
-        font-style: italic;
-        color: #555;
-        margin-bottom: 15px;
-        line-height: 1.6;
-    }
+/* Citatet e klientëve */
+.client-feedback blockquote {
+    font-style: italic;
+    color: #D1D5DB; /* Gri e lehtë për tekstin e citateve */
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 1rem;
+}
 
-    .client-feedback p {
-        font-size: 1rem;
-        color: #333;
-        font-weight: bold;
-    }
-
-.client-rating {
+/* Emri i klientit */
+.client-feedback p {
+    font-size: 1.1rem;
+    color: #FACC15; /* E verdhë për emrat */
+    font-weight: bold;
     margin-top: 10px;
-    font-size: 1.2rem;
-    color: #f1c40f; /* Ngjyrë për yjet */
+}
+
+/* Vlerësimi me yje */
+.client-rating {
+    margin-top: 15px;
+    font-size: 1.3rem; /* Pak më e madhe për vizibilitet më të mirë */
+    color: #FACC15; /* E verdhë për yjet */
 }
 
 
 .special-offers {
     text-align: center;
     padding: 50px 20px;
-    background-color: #ffe0b3;
+    background-color: #1C1C1E; /* Blu e errët për një pamje më elegante */
+    border-radius: 12px;
 }
 
     .special-offers h2 {
         font-size: 2.5em;
-        color: #d35400;
+        color: #FACC15; /* E verdhë e butë për të tërhequr vëmendjen */
         margin-bottom: 30px;
         text-transform: uppercase;
+        letter-spacing: 1.5px;
     }
 
 .offers-container {
@@ -676,9 +917,9 @@ body, h1, h2, p, ul, li {
 }
 
 .offer-item {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #1C1C1E; /* E bardhë për kontrast të mirë */
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Hijet për thellësi */
     padding: 20px;
     text-align: center;
     width: 300px; /* Përcakton të njëjtën gjerësi */
@@ -687,110 +928,1024 @@ body, h1, h2, p, ul, li {
 
     .offer-item:hover {
         transform: translateY(-5px);
-        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.3); /* Efekt më i thellë në hover */
     }
 
 .offer-image {
     width: 100%;
-    height: 250px; /* Vendos madhësi fikse */
+    height: 250px; /* Madhësi fikse për uniformitet */
     overflow: hidden;
     border-radius: 10px;
+    margin-bottom: 15px;
 }
 
     .offer-image img {
         width: 100%;
         height: 100%;
         object-fit: cover; /* Siguron që imazhi përshtatet në mënyrë të barabartë */
+        transition: transform 0.3s ease;
     }
+
+        .offer-image img:hover {
+            transform: scale(1.1); /* Zoom i lehtë gjatë hover-it */
+        }
 
 .offer-item h3 {
     font-size: 1.5em;
     margin-bottom: 10px;
-    color: #d35400;
+    color: #FACC15; /* Titulli me të verdhë për të nxjerrë në pah ofertën */
+    text-transform: capitalize;
 }
 
 .offer-item p {
     font-size: 1em;
-    color: #555;
+    color: #D1D5DB; /* Gri e butë për tekstin përshkrues */
     line-height: 1.6;
 }
 
 .offer-item button {
     margin-top: 15px;
     padding: 10px 20px;
-    background-color: #d35400;
-    color: white;
+    background-color: #FACC15; /* Ngjyrë e verdhë për butonin */
+    color: #1E293B; /* Blu e errët për tekstin e butonit */
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
     .offer-item button:hover {
-        background-color: #e67e22;
+        background-color: #1C1C1E; /* Efekt i verdhë më i ndezur në hover */
+        transform: scale(1.05);
     }
 
-/* Seksioni për Ofertat Speciale */
-/* Seksioni i Ofertave Speciale */
-.special-offers {
+/* Seksioni: About Us */
+.about-us {
     padding: 60px 20px;
-    background-color: #f9f9f9;
+    text-align: center;
+    background: linear-gradient(135deg, #451952, #1C1C1E); /* Gradient lejla dhe blu e errët */
+    color: #E5E7EB; /* Tekst gri i lehtë për kontrast */
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Hijet për thellësi */
+    margin-bottom: 40px;
+}
+
+.about-us h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #FACC15; /* Ngjyrë e verdhë për titullin */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.about-us p {
+    font-size: 1.2rem;
+    line-height: 1.8; /* Hapësirë ndërmjet rreshtave për lexim më të rehatshëm */
+    margin-bottom: 40px;
+    color: #CBD5E1; /* Gri neutrale për tekstin */
+}
+
+/* Seksioni: Team */
+.team-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #1C1C1E, #3B185F); /* Gradient lejla dhe blu e errët */
+    color: #E5E7EB; /* Tekst gri i lehtë për kontrast */
+    border-radius: 12px;
+}
+
+.team-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #FACC15; /* E verdhë për titullin */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.team {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    background-color: #FFFFFF; /* E bardhë për kontrast me sfondin */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Hijet për thellësi */
+    text-align: center;
+    max-width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: scale(1.1); /* Ndjesi dinamike gjatë hover-it */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25); /* Hijet bëhen më të theksuara */
+}
+
+.team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* E bën imazhin rrethor */
+    margin-bottom: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Hije për thellësi */
+    border: 3px solid #FACC15; /* Kufiri i verdhë për theksim */
+}
+
+.team-member h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #1A202C; /* Gri e errët për tekstin */
+    font-weight: bold;
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: #4A5568; /* Gri neutrale për tekstin */
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+/* Footer */
+footer {
+    background-color: #141414;
+    color: #EAECEE;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 2px solid #FFD700;
+    display: flex; /* Përdor flexbox për qendërzimin */
+    justify-content: center; /* Vendos përmbajtjen në qendër horizontalisht */
+    align-items: center; /* Vendos përmbajtjen në qendër vertikalisht */
+    flex-direction: column; /* Siguron që elementet të vendosen vertikalisht */
+    min-height: 60px; /* Madhësi minimale për një pamje më të mirë */
+}
+
+
+/* Seksioni: Blog Inspirim për Stil */
+.style-inspiration {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #451952, #1C1C1E); /* Ngjyra Lejlë */
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 50px;
+}
+
+    .style-inspiration .section-title {
+        font-size: 2.5rem;
+        color: #FACC15; /* Ngjyrë e verdhë për titullin */
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .style-inspiration .section-description {
+        font-size: 1.2rem;
+        color: #D1D5DB; /* Gri e butë për përshkrimin */
+        margin-bottom: 40px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+.inspiration-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.inspiration-image {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+    .inspiration-image img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .inspiration-image:hover img {
+        transform: scale(1.05); /* Zmadhohet pak kur kalon miu mbi të */
+    }
+
+.inspiration-cta {
+    margin-top: 20px;
+}
+
+    .inspiration-cta button {
+        padding: 12px 30px;
+        background-color: #FACC15; /* E verdhë për butonin */
+        color: #1C1C1E; /* Tekst i errët për kontrast */
+        border: none;
+        border-radius: 8px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+        .inspiration-cta button:hover {
+            background-color: #D4AC0D; /* E verdhë e errët gjatë hover-it */
+            transform: scale(1.1);
+        }
+/* Faqja e Koleksioneve */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #451952, #1C1C1E); /* Sfond Lejlë */
+    color: #EAECEE;
+}
+
+header.header {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+    header.header h1 {
+        font-size: 2.5rem;
+        color: #FACC15; /* Titulli i verdhë */
+        margin-bottom: 15px;
+    }
+
+    header.header p {
+        font-size: 1.2rem;
+        color: #D1D5DB; /* Gri e butë për tekstin */
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+.collections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.collection-card {
+    background-color: #2D3748; /* Gri e errët */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .collection-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .collection-card img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .collection-card h3 {
+        font-size: 1.5rem;
+        color: #FACC15;
+        margin: 15px 0 10px;
+    }
+
+    .collection-card p {
+        font-size: 1rem;
+        color: #D1D5DB;
+        margin-bottom: 15px;
+    }
+
+
+
+
+/* Seksioni Misioni Ynë */
+.mission {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #451952, #1C1C1E); /* Gradient lejla për harmoni me projektin */
+    color: #EAECEE; /* Tekst i bardhë për kontrast të pastër */
+    text-align: center;
+    border-radius: 12px; /* Këndet e rrumbullakosura për një ndjesi moderne */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* Hije për thellësi */
+    margin-bottom: 40px;
+}
+
+    .mission h2 {
+        font-size: 2.8rem; /* Titull më i madh për theksim */
+        margin-bottom: 20px;
+        color: #FACC15; /* Ngjyra e verdhë për tërheqje vizuale */
+        text-transform: uppercase; /* Tekst i kapitaleve për më shumë impakt */
+        letter-spacing: 1.5px; /* Hapësirë mes shkronjave */
+        font-weight: bold; /* Tekst më i theksuar */
+    }
+
+    .mission p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: #D1D5DB; /* Gri e butë për tekstin ndihmës */
+        margin: 0 auto;
+        max-width: 700px; /* Kufizon gjerësinë për tekst të fokusuar */
+        text-align: justify;
+    }
+
+/* Seksioni për ikonat */
+.mission-icon {
+    font-size: 3.5rem; /* Madhësi më e madhe për ikonat */
+    color: #FACC15; /* Ngjyra e verdhë për të dalë në pah */
+    margin-bottom: 20px;
+}
+
+    /* Animacion për efekt vizual */
+    .mission-icon:hover {
+        transform: scale(1.2); /* Efekt i rritjes së lehtë kur kalon miu */
+        transition: transform 0.3s ease-in-out;
+    }
+
+
+/* Contact Header */
+.contact-header {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #1C1C1E; /* Ngjyrë e zezë për sfondin për të harmonizuar me projektin */
+    color: #FACC15; /* Tekst i verdhë për të krijuar kontrast elegant */
+    border-bottom: 5px solid #451952; /* Linjë ndarëse me ngjyrë lejla për dekorim */
+}
+
+    .contact-header h1 {
+        font-size: 3rem; /* Font i madh për titullin */
+        margin-bottom: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1.5px; /* Hapësirë mes shkronjave */
+        color: #FACC15; /* E verdhë për titullin për të tërhequr vëmendjen */
+    }
+
+    .contact-header p {
+        font-size: 1.5rem; /* Tekst ndihmës më i madh për lexueshmëri */
+        line-height: 1.8;
+        margin-bottom: 0;
+        color: #E5E7EB; /* Tekst gri i lehtë për harmoni me sfondin e errët */
+    }
+
+
+/* Contact Form Section */
+.contact-form-section {
+    padding: 80px 20px;
+    background-color: #1C1C1E; /* Ngjyrë e zezë për harmonizim me sfondin e projektit */
     text-align: center;
 }
 
-    .special-offers h2 {
-        font-size: 2.5rem;
+.form-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #451952; /* Blu e errët për kontrast me sfondin */
+    padding: 40px;
+    border-radius: 15px; /* Këndet më të buta për estetikë */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5); /* Hije për thellësi */
+    border: 2px solid #451952; /* Kufij me ngjyrë lejla për detaj dekorativ */
+}
+
+    .form-container h2 {
         margin-bottom: 30px;
-        color: #d35400;
+        color: #FACC15; /* Ngjyrë e verdhë për titullin */
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #FACC15; /* Ngjyrë e verdhë për tekstin e etiketave */
+        font-size: 1.1rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 15px;
+        border-radius: 10px; /* Këndet më të buta për një ndjesi të rehatshme */
+        border: 2px solid #451952; /* Kufij lejla për të nxjerrë në pah inputet */
+        font-size: 1rem;
+        background-color: #1C1C1E; /* Ngjyrë e zezë për sfondin e inputeve */
+        color: #E5E7EB; /* Tekst i qartë për lexueshmëri të mirë */
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #FACC15; /* Ngjyrë e verdhë për të tërhequr vëmendjen gjatë fokusimit */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Hije gjatë fokusimit */
+            outline: none; /* Heq kufirin e paracaktuar */
+        }
+
+    .form-group button {
+        display: inline-block;
+        padding: 15px 30px;
+        background-color: #FACC15; /* Ngjyrë e verdhë për butonin */
+        color: #1C1C1E; /* Tekst i errët për kontrast me sfondin e butonit */
+        border: none;
+        border-radius: 10px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+        .form-group button:hover {
+            background-color: #FFD700; /* Ngjyrë e artë për efektin e hover-it */
+            transform: scale(1.05); /* Efekt zmadhimi gjatë hover-it */
+        }
+
+.submit-btn {
+    padding: 15px 30px;
+    background-color: #451952; /* Ngjyra lejla për harmonizim me tematikën */
+    color: #FFFFFF; /* Tekst i bardhë për kontrast të mirë */
+    border: none;
+    border-radius: 10px; /* Këndet e rrumbullakosura për një pamje më elegante */
+    font-size: 1.2rem; /* Madhësi e përshtatshme për lexueshmëri */
+    font-weight: bold; /* Tekst i theksuar */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Hije për thellësi */
+}
+
+    .submit-btn:hover {
+        background-color: #FACC15; /* Ngjyrë e verdhë për efekt tërheqës gjatë hover-it */
+        transform: scale(1.08); /* Efekt zmadhimi për të treguar ndërveprimin */
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4); /* Hijet bëhen më të theksuara në hover */
+    }
+
+/* Contact Details Section */
+.contact-details {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #1C1C1E; /* Sfond i errët për harmoni me projektin */
+    color: #FFFFFF; /* Tekst i bardhë për kontrast dhe lexueshmëri */
+}
+
+.details-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.detail-item {
+    text-align: center;
+    background-color: #2E2E30; /* Sfond gri i errët për kartat */
+    padding: 25px;
+    border-radius: 15px; /* Këndet e rrumbullakosura për një pamje moderne */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4); /* Hije më të theksuara për thellësi */
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .detail-item:hover {
+        transform: scale(1.08); /* Efekt zmadhimi gjatë hover-it */
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6); /* Hije më të theksuara për efekt tërheqës */
+    }
+
+    .detail-item i {
+        font-size: 2.5rem; /* Ikonat më të mëdha për vizibilitet më të mirë */
+        color: #FACC15; /* Ngjyrë e artë për të theksuar ikonat */
+        margin-bottom: 15px;
+    }
+
+    .detail-item h3 {
+        font-size: 1.5rem; /* Teksti më i madh dhe më i qartë */
+        margin-bottom: 15px;
+        color: #FFFFFF; /* Titujt të bardhë për kontrast maksimal */
+        font-weight: bold;
+    }
+
+    .detail-item p {
+        font-size: 1.1rem;
+        color: #D1D5DB; /* Tekst i butë dhe i lexueshëm */
+        line-height: 1.8;
+    }
+/* Map Section */
+.map-section {
+    padding: 60px 20px;
+    background-color: #1C1C1E; /* Sfond i errët për harmoni me projektin */
+    text-align: center;
+    border-radius: 10px; /* Këndet pak të rrumbullakosura për një pamje më të lëmuar */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4); /* Hije për thellësi */
+    color: #FFFFFF; /* Tekst i bardhë për kontrast */
+}
+
+    .map-section h2 {
+        font-size: 2.5rem; /* Titull i madh për të tërhequr vëmendjen */
+        color: #FACC15; /* Ngjyrë e artë për titullin për tërheqje vizuale */
+        margin-bottom: 30px;
+        text-transform: uppercase; /* Tekst i stiluar për titullin */
+        font-weight: bold;
+        letter-spacing: 1.5px; /* Hapësira mes shkronjave për një stil më të sofistikuar */
+    }
+
+.map-container {
+    width: 100%;
+    height: 400px; /* Madhësi fikse për hartën */
+    margin-top: 20px;
+    border-radius: 10px; /* Këndet e rrumbullakosura për harmonizim me seksionin */
+    overflow: hidden; /* Për të fshehur pjesët që dalin jashtë */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.6); /* Hije më të theksuara për të përmirësuar pamjen */
+}
+
+    .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none; /* Heq kufirin për një pamje më të pastër */
+    }
+
+
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #1C1C1E; /* Sfonda e errët për një pamje elegante */
+    color: #EAECEE;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #141414;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    color: #FACC15;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #EAECEE;
+    font-weight: bold;
+}
+
+.nav-links li a.active {
+    color: #FACC15;
+}
+
+/* Services Header */
+.services-header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #451952, #1C1C1E);
+    color: #FACC15;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.services-header h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.services-header p {
+    font-size: 1.3rem;
+    color: #EAECEE;
+}
+
+/ /* Services Section */
+.services-section {
+    padding: 60px 20px;
+    background-color: #1C1C1E; /* Ngjyrë gri e errët për sfondin */
+    color: white; /* Tekst i bardhë për kontrast */
+    text-align: center;
+}
+
+.services-section h2 {
+    font-size: 2.5rem;
+    color: #FFD700; /* Ngjyrë e artë për titullin */
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.service-card {
+    background-color: #2D2D30; /* Ngjyrë e zezë e butë për kartat */
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    text-align: center;
+    max-width: 350px;
+    height: 300px; /* Lartësi uniforme për të gjitha kartat */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .service-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.5);
+    }
+
+.service-icon {
+    font-size: 3rem; /* Madhësi e madhe për ikonat */
+    color: #FFD700; /* Ngjyrë e artë për ikonat */
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    color: #FFFFFF; /* Tekst i bardhë për titullin */
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #D1D5DB; /* Gri e lehtë për tekstin */
+    line-height: 1.6;
+}
+
+
+/* Footer */
+footer {
+    background-color: #141414;
+    color: #EAECEE;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 2px solid #FFD700;
+    display: flex; /* Përdor flexbox për qendërzimin */
+    justify-content: center; /* Vendos përmbajtjen në qendër horizontalisht */
+    align-items: center; /* Vendos përmbajtjen në qendër vertikalisht */
+    flex-direction: column; /* Siguron që elementet të vendosen vertikalisht */
+    min-height: 60px; /* Madhësi minimale për një pamje më të mirë */
+}
+
+/* Seksioni: Ofertat Speciale */
+.special-offers {
+    padding: 80px 20px;
+    background-color: #1C1C1E; /* Ngjyrë e errët */
+    background: linear-gradient(to right, #451952, #1C1C1E); /* Gradient lejla */
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 50px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    color: #EAECEE; /* Tekst i lehtë për kontrast */
+}
+
+    .special-offers h2 {
+        font-size: 3rem;
+        color: #FACC15; /* Ngjyrë e verdhë elegante për titullin */
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .special-offers p {
+        font-size: 1.4rem;
+        color: #D1D5DB; /* Gri e lehtë për përshkrimin */
+        margin-bottom: 40px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+/* Fotoja e Ofertës */
+.offer-image {
+    width: 100%; /* Fotoja shfaqet në të gjithë gjerësinë */
+    max-width: 300px;
+    height: auto; /* Lartësia përshtatet automatikisht */
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+    .offer-image img {
+        width: 100%;
+        height: auto; /* Ruhet raporti i përmasave */
+        object-fit: cover; /* Mbush plotësisht kutinë */
+        border-radius: 15px;
+        display: block;
+    }
+
+    .offer-image:hover {
+        transform: scale(1.03);
+        box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.5);
+    }
+
+/* Butoni për Veprim */
+.offer-cta {
+    margin-top: 30px;
+}
+
+    .offer-cta button {
+        padding: 15px 40px;
+        background-color: #FACC15; /* Ngjyrë e verdhë e ndritshme për butonin */
+        color: #1C1C1E; /* Ngjyrë e errët për kontrast */
+        border: none;
+        border-radius: 8px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+        .offer-cta button:hover {
+            background-color: #E1B307; /* Ngjyrë e verdhë më e errët gjatë hover-it */
+            transform: scale(1.05);
+        }
+
+
+.filters {
+    padding: 20px;
+    background: #273746; /* Blu e errët për sfondin e filtrave */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    max-width: 300px;
+}
+
+.filter-group {
+    margin-bottom: 15px;
+}
+
+    .filter-group h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: #F7DC6F; /* Ngjyrë ari për titujt e filtrave */
     }
 
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    justify-items: center;
 }
 
 .product-card {
-    background-color: white;
+    background-color: #212F3C; /* Blu e errët për harmoni me ofertat */
     border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
+    border-radius: 8px;
+    padding: 15px;
     text-align: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-width: 300px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
-
-    .product-card img {
-        width: 100%;
-        height: 250px; /* Madhësi fikse për uniformitet */
-        object-fit: cover;
-        border-radius: 10px;
-        margin-bottom: 15px;
-    }
-
-    .product-card h3 {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-        color: #d35400;
-    }
-
-    .product-card p {
-        font-size: 1rem;
-        color: #555;
-        line-height: 1.6;
-    }
 
     .product-card:hover {
         transform: scale(1.05);
-        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
     }
 
-/* Footer */
-footer {
-    background-color: #000;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
+    .product-card img {
+        max-width: 100%;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+
+.login-button {
+    background-color: #f5c518;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
+    .login-button:hover {
+        background-color: #ffdd33;
+        transform: scale(1.05);
+    }
+/* Seksioni Stilisti Virtual */
+.virtual-stylist-link {
+    background: linear-gradient(135deg, #2B2B2B, #4B0082);
+    padding: 50px;
+    text-align: center;
+    border-radius: 20px;
+    margin: 20px auto;
+    width: 90%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+    .virtual-stylist-link h2 {
+        font-size: 2.5rem;
+        color: #FFD700; /* Ngjyrë ari për titullin */
+        margin-bottom: 15px;
+        text-shadow: 0 0 10px #FFD700, 0 0 20px #FFC300;
+    }
+
+    .virtual-stylist-link p {
+        font-size: 1.2rem;
+        color: #FFFFFF;
+        line-height: 1.8;
+        margin-bottom: 25px;
+        max-width: 700px;
+        margin: 0 auto 30px auto;
+    }
+
+/* Seksioni Stilisti Virtual */
+.virtual-stylist-link {
+    background: linear-gradient(135deg, #3A0CA3, #7209B7);
+    padding: 50px;
+    text-align: center;
+    border-radius: 15px;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+    .virtual-stylist-link h2 {
+        font-size: 2.5rem;
+        color: #FFD700;
+        margin-bottom: 20px;
+    }
+
+    .virtual-stylist-link p {
+        font-size: 1.2rem;
+        color: #FFFFFF;
+        margin-bottom: 30px;
+    }
+
+/* Butoni Stilisti Virtual */
+.btn-virtual-stylist {
+    display: inline-block;
+    background: linear-gradient(135deg, #FF7E5F, #FCB045);
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 10px rgba(252, 176, 69, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+    .btn-virtual-stylist::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 200%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: skewX(-30deg);
+        transition: left 0.5s ease;
+    }
+
+    .btn-virtual-stylist:hover::before {
+        left: 100%;
+    }
+
+    .btn-virtual-stylist:hover {
+        background: linear-gradient(135deg, #FC466B, #3F5EFB);
+        color: #FFD700;
+        box-shadow: 0 6px 15px rgba(63, 94, 251, 0.5), 0 4px 8px rgba(0, 0, 0, 0.3);
+        transform: scale(1.1);
+    }
+
+
+
+/* Footer-i i Faqes */
+.site-footer {
+    background: linear-gradient(135deg, #451952, #1C1C1E); /* Sfond Lejlë */
+    color: #EAECEE;
+    padding: 40px 20px;
+    margin-top: 40px;
+    font-size: 1rem;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+    .footer-container > div {
+        flex: 1 1 calc(25% - 20px);
+        min-width: 200px;
+    }
+
+.footer-about h3 {
+    font-size: 1.8rem;
+    color: #FACC15; /* E verdhë për titullin */
+    margin-bottom: 15px;
+}
+
+.footer-about p {
+    font-size: 1rem;
+    color: #D1D5DB;
+    line-height: 1.8;
+}
+
+.footer-links h4,
+.footer-categories h4,
+.footer-contact h4 {
+    font-size: 1.5rem;
+    color: #FACC15;
+    margin-bottom: 15px;
+}
+
+.footer-links ul,
+.footer-categories ul,
+.footer-contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li,
+.footer-categories li,
+.footer-contact li {
+    margin-bottom: 10px;
+}
+
+.footer-links a,
+.footer-categories a {
+    text-decoration: none;
+    color: #EAECEE;
+    transition: color 0.3s ease;
+}
+
+    .footer-links a:hover,
+    .footer-categories a:hover {
+        color: #FACC15; /* E verdhë gjatë hover-it */
+    }
+
+.footer-contact ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-contact i {
+    color: #FACC15;
+}
+
+/* Pjesa Fundore */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    font-size: 0.9rem;
+    color: #D1D5DB;
+}
+
+    .footer-bottom p {
+        margin-bottom: 10px;
+    }
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+    .social-icons a {
+        color: #FACC15;
+        font-size: 1.5rem;
+        transition: color 0.3s ease;
+    }
+
+        .social-icons a:hover {
+            color: #EAECEE;
+        }

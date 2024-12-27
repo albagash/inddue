@@ -29,12 +29,14 @@ public class AuthController : ControllerBase
     [AllowAnonymous]
     public async Task<IActionResult> Register([FromBody] RegisterModel model)
     {
+        Console.WriteLine($"🔵 Kërkesë për regjistrim: Email: {model.Email}, Role: {model.Role}");
+
         if (!ModelState.IsValid)
         {
+            Console.WriteLine("❌ ModelState është e pavlefshme.");
             return BadRequest(ModelState);
         }
 
-        // Kontrollo nëse përdoruesi ekziston
         var existingUser = await _userManager.FindByEmailAsync(model.Email);
         if (existingUser != null)
         {
@@ -53,31 +55,25 @@ public class AuthController : ControllerBase
 
         if (!result.Succeeded)
         {
-            Console.WriteLine("❌ Gabim gjatë krijimit të përdoruesit.");
+            Console.WriteLine($"❌ Gabim gjatë krijimit të përdoruesit: {string.Join(", ", result.Errors.Select(e => e.Description))}");
             return BadRequest(result.Errors);
         }
 
-        // Kontrollo dhe shto rolin nëse mungon
         if (!string.IsNullOrEmpty(model.Role))
         {
-            var roleExists = await _userManager.IsInRoleAsync(user, model.Role);
-            if (!roleExists)
+            var roleAdded = await _userManager.AddToRoleAsync(user, model.Role);
+            if (!roleAdded.Succeeded)
             {
-                var roleAdded = await _userManager.AddToRoleAsync(user, model.Role);
-                if (roleAdded.Succeeded)
-                {
-                    Console.WriteLine($"✅ Përdoruesi {model.Email} u shtua në rolin {model.Role}.");
-                }
-                else
-                {
-                    Console.WriteLine($"❌ Gabim gjatë shtimit të rolit {model.Role}.");
-                    return BadRequest(new { message = "Gabim gjatë shtimit të rolit." });
-                }
+                Console.WriteLine($"❌ Gabim gjatë shtimit të rolit {model.Role}: {string.Join(", ", roleAdded.Errors.Select(e => e.Description))}");
+                return BadRequest(new { message = "Gabim gjatë shtimit të rolit." });
             }
+            Console.WriteLine($"✅ Përdoruesi {model.Email} u shtua në rolin {model.Role}.");
         }
 
+        Console.WriteLine($"✅ Përdoruesi me email {model.Email} u regjistrua me sukses.");
         return Ok(new { message = "Përdoruesi u regjistrua me sukses." });
     }
+
 
 
     // POST: /api/auth/login
@@ -135,29 +131,32 @@ public class AuthController : ControllerBase
     }
 }
 
+
+
 // Modelet për regjistrim dhe kyçje
 public class RegisterModel
-{
-    [Required]
-    [EmailAddress]
-    public string Email { get; set; } = string.Empty;
+    {
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; } = string.Empty;
 
-    [Required]
-    [MinLength(6)]
-    public string Password { get; set; } = string.Empty;
+        [Required]
+        [MinLength(6)]
+        public string Password { get; set; } = string.Empty;
 
-    [Required]
-    public string FullName { get; set; } = string.Empty;
+        [Required]
+        public string FullName { get; set; } = string.Empty;
 
-    public string Role { get; set; } = "User"; // Default
-}
+        public string Role { get; set; } = "User"; // Default
+    }
 
-public class LoginModel
-{
-    [Required]
-    [EmailAddress]
-    public string Email { get; set; } = string.Empty;
+    public class LoginModel
+    {
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; } = string.Empty;
 
-    [Required]
-    public string Password { get; set; } = string.Empty;
-}
+        [Required]
+        public string Password { get; set; } = string.Empty;
+    }
+
